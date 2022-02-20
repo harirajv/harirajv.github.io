@@ -1,0 +1,121 @@
+.contact {
+    height: 100vh;
+    position: relative;
+}
+
+.contact-bg {
+    width: 20px;
+    height: 100%;
+    background-color: green;
+    position: absolute;
+}
+
+.contact-wrapper {
+    padding: 0 50px;
+    display: flex;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-title {
+    font-size: 60px;
+    width: 80%;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    font-weight: 300;
+    width: 70%;
+}
+
+.contact-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.contact-description {
+    font-weight: 200;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+button {
+    border: none;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 0 50px; /* changing padding for top & bottom */
+    }
+
+    .contact-title {
+        font-size: 30px;
+    }
+
+    .contact-info-item {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .contact-description { 
+        display: none;
+    }
+
+    form {
+        margin-top: 0;
+        display: flex;
+        /*Setting flex-wrap alone does not change input elements alignment style bcos the input elements' size is too big for 480px screen*/
+        /* So set input size to 35% */
+        flex-wrap: wrap;
+    }
+
+    input {
+        width: 35%;
+        height: 40px;
+        margin: 10px;
+        /*margin-left is set to 0 so that the input elements are not offset a little more right from beginning compared to textarea*/
+        margin-left: 0;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+}
