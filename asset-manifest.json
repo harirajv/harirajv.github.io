@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/harirajv.github.io/static/css/main.516f92f5.chunk.css",
+    "main.js": "/harirajv.github.io/static/js/main.07827107.chunk.js",
+    "main.js.map": "/harirajv.github.io/static/js/main.07827107.chunk.js.map",
+    "runtime-main.js": "/harirajv.github.io/static/js/runtime-main.2c0f7818.js",
+    "runtime-main.js.map": "/harirajv.github.io/static/js/runtime-main.2c0f7818.js.map",
+    "static/js/2.a626790a.chunk.js": "/harirajv.github.io/static/js/2.a626790a.chunk.js",
+    "static/js/2.a626790a.chunk.js.map": "/harirajv.github.io/static/js/2.a626790a.chunk.js.map",
+    "static/js/3.fdd9b6c3.chunk.js": "/harirajv.github.io/static/js/3.fdd9b6c3.chunk.js",
+    "static/js/3.fdd9b6c3.chunk.js.map": "/harirajv.github.io/static/js/3.fdd9b6c3.chunk.js.map",
+    "index.html": "/harirajv.github.io/index.html",
+    "static/css/main.516f92f5.chunk.css.map": "/harirajv.github.io/static/css/main.516f92f5.chunk.css.map",
+    "static/js/2.a626790a.chunk.js.LICENSE.txt": "/harirajv.github.io/static/js/2.a626790a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c0f7818.js",
+    "static/js/2.a626790a.chunk.js",
+    "static/css/main.516f92f5.chunk.css",
+    "static/js/main.07827107.chunk.js"
+  ]
+}
