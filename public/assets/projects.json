@@ -1,0 +1,52 @@
+{
+    "projects": [
+        {
+            "name": "CSP Cost Optimization",
+            "category": "Web",
+            "image_src": "Cloud-Cost.jpg",
+            "details_txt": "An Analytic Hierarchy Process powered tool to optimize expenses of cloud service providers to maximize profitability without affecting brand loyalty of paying customers.",
+            "details_link": "https://github.com/harirajv/CSP-profit-maximisation",
+            "tech_tags": "Python"
+        },
+        {
+            "name": "Anchor-free Pedestrian Detection enhanced by FPN",
+            "category": "AI",
+            "image_src": "pedestrian.webp",
+            "details_txt": "A pedestrian detection system for autonomous vehicles was developed using advanced techniques like Residual Neural Networks, Anchor-free algorithms, and Feature Pyramid Networks, significantly enhancing accuracy across challenging conditions.",
+            "details_link": "",
+            "tech_tags": "Computer Vision,PyTorch"
+        },
+        {
+            "name": "Indian Language Identifier",
+            "category": "AI",
+            "image_src": "language.png",
+            "details_txt": "An automatic speech recognition system was developed to identify Indian languages, utilizing Mel Frequency Cepstral Coefficients extracted from news clips with Python Speech Features library.",
+            "details_link": "https://github.com/harirajv/Automatic-Language-Identification",
+            "tech_tags": "NLP,Scikit-Learn"
+        },
+        {
+            "name": "Credit Card Fraud Detection",
+            "category": "AI",
+            "image_src": "credit.jpg",
+            "details_txt": "Developed a Credit Card Fraud Detection system that analyzes transaction data to identify spending anomalies and potential fraud, ensuring the anonymity of financial features.",
+            "details_link": "",
+            "tech_tags": "Unbalanced Data,Data Science"
+        },
+        {
+            "name": "Chronic Kidney Disease Detection",
+            "category": "AI",
+            "image_src": "medical.png",
+            "details_txt": "Devised a data-driven model to enable early detection of Chronic Kidney Disease using clinical data such as sugar, albumin, and hemoglobin levels.",
+            "details_link": "",
+            "tech_tags": "Data Scarcity,ML in Healthcare"
+        },
+        {
+            "name": "HackerNews Mobile Reader",
+            "category": "Web",
+            "image_src": "news.png",
+            "details_txt": "Developed a responsive Hacker News Mobile Reader app with React JS, featuring article fetching, social media sharing, and single sign-on via Google and Facebook.",
+            "details_link": "https://github.com/harirajv/hackernews",
+            "tech_tags": "React"
+        }
+    ]
+}

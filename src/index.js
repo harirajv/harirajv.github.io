@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.css';
+// Incase of bootstrap icons issues: https://stackoverflow.com/a/67829172/6595327
+import Swiper from 'swiper';
+import 'swiper/css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
