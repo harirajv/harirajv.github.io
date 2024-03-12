@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import 'boxicons';
 
 class Layout extends React.Component {
@@ -34,9 +35,9 @@ class Layout extends React.Component {
 								
 								return (
 									<li key={item}>
-										<a href={href_value} className={item === "Home" ? "nav-link scrollto" : "nav-link scrollto"}>
+										<Link to={href_value} className={item === "Home" ? "nav-link scrollto" : "nav-link scrollto"}>
 											<box-icon name={icon_value}/><span>{item}</span>
-										</a>
+										</Link>
 									</li>
 								)
 							})}
