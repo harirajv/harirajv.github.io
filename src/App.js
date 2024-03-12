@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route
 } from 'react-router-dom';
 import './App.css';
@@ -13,7 +13,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>  
+    <HashRouter>
       <Layout>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/contact" component={Contact} />
       </Layout>
-    </Router>
+    </HashRouter>
   );
 }
 
