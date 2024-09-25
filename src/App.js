@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   HashRouter,
-  Route
+  Route,
+  Routes
 } from 'react-router-dom';
 import './App.css';
 import Layout from './pages/Layout';
@@ -15,11 +16,13 @@ function App() {
   return (
     <HashRouter>
       <Layout>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contact" component={Contact} />
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/resume" element={<Resume/>} />
+          <Route path="/portfolio" element={<Portfolio/>} />
+          <Route path="/contact" element={<Contact/>} />
+        </Routes>
       </Layout>
     </HashRouter>
   );

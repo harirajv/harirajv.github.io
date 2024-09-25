@@ -28,7 +28,7 @@ class Contact extends React.Component {
                                 <p>hvenka17@asu.edu</p>
                             </div>
                             
-                            <div class="phone">
+                            <div className="phone">
                                 <a href="tel:4808751333"><i><Phone/></i></a>
                                 <h4>Call:</h4>
                                 <p>+1&nbsp;(480)&nbsp;875&#8209;1333</p>
@@ -38,7 +38,7 @@ class Contact extends React.Component {
                     </div>
 
                     <div className="col-lg-8 mt-5 mt-lg-0">
-                        <form action="forms/contact.php" method="post" role="form" className="php-email-form">
+                        <form action="forms/contact.php" method="post" className="php-email-form">
                         <div className="row">
                             <div className="col-md-6 form-group">
                             <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required/>

@@ -86,7 +86,7 @@ componentDidMount() {
                                     <p>DS</p>
                                     <div className="portfolio-links">
                                         <p>A pedestrian detection system for autonomous vehicles was developed using advanced techniques like Residual Neural Networks, Anchor-free algorithms, and Feature Pyramid Networks, significantly enhancing accuracy across challenging conditions.</p>
-                                        <a href="#" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><box-icon name="link"/></a>
+                                        <a href="/#" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><box-icon name="link"/></a>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ componentDidMount() {
                                     <p>DS</p>
                                     <div className="portfolio-links">
                                         <p>Developed a Credit Card Fraud Detection system that analyzes transaction data to identify spending anomalies and potential fraud, ensuring the anonymity of financial features.</p>
-                                        <a href="#" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><box-icon name="link"/></a>
+                                        <a href="/#" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><box-icon name="link"/></a>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ componentDidMount() {
                                     <p>DS</p>
                                     <div className="portfolio-links">
                                         <p>Devised a data-driven model to enable early detection of Chronic Kidney Disease using clinical data such as sugar, albumin, and hemoglobin levels.</p>
-                                        <a href="#" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><box-icon name="link"/></a>
+                                        <a href="/#" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><box-icon name="link"/></a>
                                     </div>
                                 </div>
                             </div>
