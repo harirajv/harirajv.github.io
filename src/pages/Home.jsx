@@ -6,9 +6,9 @@ class Home extends React.Component {
     componentDidMount() {
         const options = {
             strings: [
-                "Designer",
-                "Developer",
-                "Data Scientist"
+                "Full-Stack Developer",
+                "DevOps Engineer",
+                "Cloud Evangelist"
             ],
             typeSpeed: 75,
             backSpeed: 75,
@@ -32,7 +32,6 @@ class Home extends React.Component {
                     <p>I'm a <span ref={(el) => { this.el = el; }} /></p>
                     <div className="social-links">
                         <a href="mailto:hvenka17@asu.edu" className="email"><box-icon type='solid' name="envelope"/></a>
-                        <a href="tel:4808751333" className="phone"><box-icon type='solid' name='phone'/></a>
                         <a href="https://www.linkedin.com/in/hariraj-venkatesan/" className="linkedin"><box-icon type='logo' name="linkedin"/></a>
                         <a href="https://github.com/harirajv" className="github"><box-icon type='logo' name="github"/></a>
                     </div>

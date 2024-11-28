@@ -10,7 +10,7 @@ class Resume extends React.Component {
                     <div className="section-title">
                         {/* <h2>Resume</h2> */}
                         <h2>About Me</h2>
-                        <p>Catch a glimpse of my academic and professional career below. Download my resume: <a href="/assets/Hariraj_Venkatesan_2.pdf" target="_blank"><box-icon type='solid' name='file-pdf'/></a></p>
+                        <p>Catch a glimpse of my academic and professional career below. Download my resume: <a href="/assets/resume.pdf" target="_blank"><box-icon type='solid' name='file-pdf'/></a></p>
                     </div>
 
                     <div className="row">
@@ -20,12 +20,6 @@ class Resume extends React.Component {
                             <div className="resume-item pb-0">
                                 <h4>Hariraj Venkatesan</h4>
                                 <p><em>Innovative and business-driven Software Engineer with 3+ years of experience in designing and developing user-centered scalable web applications on AWS from initial prototype to final deliverable and maintaining cloud infrastructure for unhindered customer experience.</em></p>
-                                
-                                <ul>
-                                    <li>Tempe, AZ</li>
-                                    <li>(480) 875-1333</li>
-                                    <li>hvenka17@asu.edu</li>
-                                </ul>
                             </div>
 
                             <h3 className="resume-title">Education</h3>
@@ -46,8 +40,18 @@ class Resume extends React.Component {
                         <div className="col-lg-6">
                             <h3 className="resume-title">Professional Experience</h3>
                             <div className="resume-item">
+                                <h4>DevOps Engineer</h4>
+                                <h5>2024 - Present</h5>
+                                <p><em>Master Electronics, Phoenix, AZ </em></p>
+                                <ul>
+                                    <li>Automated infrastructure deployment with Terraform modules to promote consistency and simplify rollback across environments.</li>
+                                    <li>Designed ECS services on AWS Fargate with Route 53 for service discovery for seamless communication between containerized services.</li>
+                                    <li>Implemented NgRx SignalStore for reactive state management of Angular components.</li>
+                                </ul>
+                            </div>
+                            <div className="resume-item">
                                 <h4>Graduate Student Assistant</h4>
-                                <h5>2022 - Present</h5>
+                                <h5>2022 - 2024</h5>
                                 <p><em>Arizona State University, Tempe, AZ </em></p>
                                 <ul>
                                     <li>Taught Data Science - exploratory data analysis, data visualization and machine learning algorithms for a diverse class of undergrad and grad students.</li>

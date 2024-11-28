@@ -4,7 +4,6 @@ import 'boxicons';
 
 class Layout extends React.Component {
 	header_items = [
-		// "Home",
 		"About",
 		"Resume",
 		"Portfolio",
@@ -12,8 +11,6 @@ class Layout extends React.Component {
 	]
 
 	header_icons = {
-		// "Home": "user",
-		// "Home": "home",
 		"About": "user",
 		"Resume": "file-blank",
 		"Portfolio": "book-content",
@@ -35,7 +32,7 @@ class Layout extends React.Component {
 								
 								return (
 									<li key={item}>
-										<Link to={href_value} className={item === "Home" ? "nav-link scrollto" : "nav-link scrollto"}>
+										<Link to={href_value} className="nav-link scrollto">
 											<box-icon name={icon_value}/><span>{item}</span>
 										</Link>
 									</li>
