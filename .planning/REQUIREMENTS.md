@@ -9,11 +9,11 @@ Requirements for this testing milestone. Each maps to roadmap phases.
 
 ### Test Infrastructure
 
-- [ ] **INFRA-01**: Vitest is configured in `vite.config.mjs` (`test` block with jsdom environment and `setupTests.js` referenced)
-- [ ] **INFRA-02**: `npm test` runs Vitest in single-pass (non-watch) mode and exits with the correct status code
-- [ ] **INFRA-03**: `npm run test:watch` (or equivalent) runs Vitest in watch mode for local development
-- [ ] **INFRA-04**: `setupTests.js` works with Vitest — `@testing-library/jest-dom` matchers register globally
-- [ ] **INFRA-05**: Stale CRA boilerplate test (`App.test.js` asserting "learn react") is removed or rewritten so the suite is green
+- [x] **INFRA-01**: Vitest is configured in `vite.config.mjs` (`test` block with jsdom environment and `setupTests.js` referenced)
+- [x] **INFRA-02**: `npm test` runs Vitest in single-pass (non-watch) mode and exits with the correct status code
+- [x] **INFRA-03**: `npm run test:watch` (or equivalent) runs Vitest in watch mode for local development
+- [x] **INFRA-04**: `setupTests.js` works with Vitest — `@testing-library/jest-dom` matchers register globally
+- [x] **INFRA-05**: Stale CRA boilerplate test (`App.test.js` asserting "learn react") is removed or rewritten so the suite is green
 
 ### Routing & Layout
 
@@ -72,11 +72,11 @@ Which phases cover which requirements. Populated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
 | ROUTE-01 | Phase 2 | Pending |
 | ROUTE-02 | Phase 2 | Pending |
 | ROUTE-03 | Phase 2 | Pending |
