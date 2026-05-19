@@ -7,7 +7,7 @@ Three-phase testing milestone for the harirajv.github.io portfolio. Phase 1 stan
 ## Phases
 
 - [x] **Phase 1: Test Infrastructure** - Configure Vitest in vite.config.mjs, repair setupTests/jest-dom integration, replace stale CRA boilerplate test
-- [ ] **Phase 2: Routing & Page Smoke Tests** - Tests for routing, Layout chrome, and each of the 5 pages rendering safely
+- [x] **Phase 2: Routing & Page Smoke Tests** - Tests for routing, Layout chrome, and each of the 5 pages rendering safely (completed 2026-05-19)
 - [ ] **Phase 3: Contact Form Tests** - Field interaction, submit handler, EmailJS mocked, success/failure states
 
 ## Phase Details
@@ -39,8 +39,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Routing + Layout tests (App under MemoryRouter, unknown-route behavior)
-- [ ] 02-02: Per-page smoke tests for Home, About, Resume, Portfolio, Contact
+- [x] 02-01: Routing + Layout tests (App under MemoryRouter, unknown-route behavior)
+- [x] 02-02: Per-page smoke tests for Home, About, Resume, Portfolio, Contact
 
 ### Phase 3: Contact Form Tests
 **Goal**: The contact form's interaction path is covered end-to-end (typing → submit → EmailJS call → success/failure feedback), with EmailJS mocked so no real email is sent during tests.
@@ -65,5 +65,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Test Infrastructure | 1/1 | Complete | 2026-05-19 |
-| 2. Routing & Page Smoke Tests | 0/2 | Not started | - |
+| 2. Routing & Page Smoke Tests | 2/2 | Complete   | 2026-05-19 |
 | 3. Contact Form Tests | 0/1 | Not started | - |
