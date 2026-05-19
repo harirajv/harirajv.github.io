@@ -17,18 +17,18 @@ Requirements for this testing milestone. Each maps to roadmap phases.
 
 ### Routing & Layout
 
-- [ ] **ROUTE-01**: `App` mounted in `MemoryRouter` renders the `Home` page at route `/`
-- [ ] **ROUTE-02**: Navigating to `/about`, `/resume`, `/portfolio`, `/contact` each render their respective page component
-- [ ] **ROUTE-03**: `Layout` renders its header/footer chrome and children for any active route
-- [ ] **ROUTE-04**: An unknown route falls back gracefully (or asserts current behavior — no crash, blank content acceptable)
+- [x] **ROUTE-01**: `App` mounted in `MemoryRouter` renders the `Home` page at route `/`
+- [x] **ROUTE-02**: Navigating to `/about`, `/resume`, `/portfolio`, `/contact` each render their respective page component
+- [x] **ROUTE-03**: `Layout` renders its header/footer chrome and children for any active route
+- [x] **ROUTE-04**: An unknown route falls back gracefully (or asserts current behavior — no crash, blank content acceptable)
 
 ### Page Smoke Tests
 
-- [ ] **PAGE-01**: `Home` page renders without throwing and contains expected anchor text/landmark
-- [ ] **PAGE-02**: `About` page renders without throwing and contains expected anchor text/landmark
-- [ ] **PAGE-03**: `Resume` page renders without throwing and contains expected anchor text/landmark
-- [ ] **PAGE-04**: `Portfolio` page renders without throwing and contains expected anchor text/landmark
-- [ ] **PAGE-05**: `Contact` page renders form fields (name, email, subject, message) and a submit button
+- [x] **PAGE-01**: `Home` page renders without throwing and contains expected anchor text/landmark
+- [x] **PAGE-02**: `About` page renders without throwing and contains expected anchor text/landmark
+- [x] **PAGE-03**: `Resume` page renders without throwing and contains expected anchor text/landmark
+- [x] **PAGE-04**: `Portfolio` page renders without throwing and contains expected anchor text/landmark
+- [x] **PAGE-05**: `Contact` page renders form fields (name, email, subject, message) and a submit button
 
 ### Contact Form
 
@@ -77,15 +77,15 @@ Which phases cover which requirements. Populated during roadmap creation.
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 1 | Complete |
 | INFRA-05 | Phase 1 | Complete |
-| ROUTE-01 | Phase 2 | Pending |
-| ROUTE-02 | Phase 2 | Pending |
-| ROUTE-03 | Phase 2 | Pending |
-| ROUTE-04 | Phase 2 | Pending |
-| PAGE-01 | Phase 2 | Pending |
-| PAGE-02 | Phase 2 | Pending |
-| PAGE-03 | Phase 2 | Pending |
-| PAGE-04 | Phase 2 | Pending |
-| PAGE-05 | Phase 2 | Pending |
+| ROUTE-01 | Phase 2 | Complete |
+| ROUTE-02 | Phase 2 | Complete |
+| ROUTE-03 | Phase 2 | Complete |
+| ROUTE-04 | Phase 2 | Complete |
+| PAGE-01 | Phase 2 | Complete |
+| PAGE-02 | Phase 2 | Complete |
+| PAGE-03 | Phase 2 | Complete |
+| PAGE-04 | Phase 2 | Complete |
+| PAGE-05 | Phase 2 | Complete |
 | FORM-01 | Phase 3 | Pending |
 | FORM-02 | Phase 3 | Pending |
 | FORM-03 | Phase 3 | Pending |
