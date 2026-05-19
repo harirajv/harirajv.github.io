@@ -20,18 +20,18 @@ The portfolio reliably represents Hariraj's professional profile to visitors —
 - ✓ Contact form submits via `@emailjs/browser` — existing (`fd02ef6`)
 - ✓ GitHub Pages deploy via `gh-pages` script — existing (`package.json`)
 - ✓ Bootstrap 5 + bootstrap-icons styling — existing
+- ✓ Working test runner configured for Vite (Vitest 4.1.6 + jsdom 29.x) — Validated in Phase 1
+- ✓ Stale CRA boilerplate test removed/replaced — Validated in Phase 1 (`src/App.test.jsx` rewritten)
+- ✓ CI-friendly `npm test` script that runs Vitest in single-pass mode — Validated in Phase 1
+- ✓ Routing test — each route renders the correct page through `MemoryRouter`+`AppRoutes` — Validated in Phase 2
+- ✓ Layout test — header chrome + children pass-through — Validated in Phase 2 (`src/pages/Layout.test.jsx`)
+- ✓ Smoke tests for each of the 5 routes (Home, About, Resume, Portfolio, Contact) — Validated in Phase 2 (`src/pages/*.test.jsx`)
 
 ### Active
 
 <!-- Current scope. Building toward these in the testing milestone. -->
 
-- [ ] Working test runner configured for Vite (Vitest, not stale CRA Jest setup)
-- [ ] Stale CRA boilerplate test removed/replaced (`App.test.js` asserts non-existent "learn react" text)
-- [ ] Smoke tests for each of the 5 routes (Home, About, Resume, Portfolio, Contact)
-- [ ] Routing test — each route renders the correct page through `HashRouter`
-- [ ] Layout test — `Layout` renders header/footer/children for any route
-- [ ] Contact form interaction tests — field input, submit handler, EmailJS call mocked
-- [ ] CI-friendly `npm test` script that runs Vitest in single-pass mode (non-watch)
+- [ ] Contact form interaction tests — field input, submit handler, EmailJS call mocked (Phase 3)
 
 ### Out of Scope
 
@@ -63,10 +63,12 @@ The portfolio reliably represents Hariraj's professional profile to visitors —
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Use Vitest, not Jest | Native Vite integration, faster, same Testing Library API | — Pending |
-| Mock EmailJS at the module boundary | Don't hit a live email API in unit tests; deterministic + free | — Pending |
-| Keep HashRouter as-is for tests | Existing routing works in production; tests use `MemoryRouter` | — Pending |
-| Coarse phase granularity, sequential execution | Small project, single-developer cadence | — Pending |
+| Use Vitest, not Jest | Native Vite integration, faster, same Testing Library API | ✓ Validated in Phase 1 (Vitest 4.1.6) |
+| Mock EmailJS at the module boundary | Don't hit a live email API in unit tests; deterministic + free | — Pending Phase 3 |
+| Keep HashRouter as-is for tests | Existing routing works in production; tests use `MemoryRouter`+`AppRoutes` | ✓ Validated in Phase 2 |
+| Coarse phase granularity, sequential execution | Small project, single-developer cadence | ✓ Validated through Phase 2 |
+| Per-test mocks (no global mocks in setupTests.js) | Keep test setup focused; mocks live where they're used | ✓ Established in Phase 2 |
+| Section-id selectors for page sentinels | ARIA roles collide on Resume's `<h2>About Me</h2>`; section ids are stable | ✓ Established in Phase 2 |
 
 ## Evolution
 
@@ -86,4 +88,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-19 after initialization*
+*Last updated: 2026-05-19 after Phase 2 completion*
