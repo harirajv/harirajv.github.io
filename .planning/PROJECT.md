@@ -26,12 +26,13 @@ The portfolio reliably represents Hariraj's professional profile to visitors —
 - ✓ Routing test — each route renders the correct page through `MemoryRouter`+`AppRoutes` — Validated in Phase 2
 - ✓ Layout test — header chrome + children pass-through — Validated in Phase 2 (`src/pages/Layout.test.jsx`)
 - ✓ Smoke tests for each of the 5 routes (Home, About, Resume, Portfolio, Contact) — Validated in Phase 2 (`src/pages/*.test.jsx`)
+- ✓ Contact form interaction tests — field input, submit handler, EmailJS call mocked, success/failure feedback — Validated in Phase 3 (`src/pages/Contact.test.jsx`, refactored `Contact.jsx` to state-driven status enum)
 
 ### Active
 
 <!-- Current scope. Building toward these in the testing milestone. -->
 
-- [ ] Contact form interaction tests — field input, submit handler, EmailJS call mocked (Phase 3)
+_All v1 testing requirements validated. Milestone v1.0 ready for completion._
 
 ### Out of Scope
 
@@ -64,7 +65,9 @@ The portfolio reliably represents Hariraj's professional profile to visitors —
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | Use Vitest, not Jest | Native Vite integration, faster, same Testing Library API | ✓ Validated in Phase 1 (Vitest 4.1.6) |
-| Mock EmailJS at the module boundary | Don't hit a live email API in unit tests; deterministic + free | — Pending Phase 3 |
+| Mock EmailJS at the module boundary | Don't hit a live email API in unit tests; deterministic + free | ✓ Validated in Phase 3 (`vi.mock('@emailjs/browser', ...)` module-scope, per-test `mockResolvedValueOnce`/`mockRejectedValueOnce`) |
+| Refactor `Contact.jsx` to state-driven status enum | Success/error UI was static DOM; FORM-04/05 were not assertable without conditional render | ✓ Phase 3 (`status: 'idle' \| 'sending' \| 'success' \| 'error'`) |
+| Bump `@testing-library/user-event` to v14 | Async API matches promise-based submit + `waitFor`/`findBy*` flow | ✓ Phase 3 (`^14.5.2`) |
 | Keep HashRouter as-is for tests | Existing routing works in production; tests use `MemoryRouter`+`AppRoutes` | ✓ Validated in Phase 2 |
 | Coarse phase granularity, sequential execution | Small project, single-developer cadence | ✓ Validated through Phase 2 |
 | Per-test mocks (no global mocks in setupTests.js) | Keep test setup focused; mocks live where they're used | ✓ Established in Phase 2 |
@@ -88,4 +91,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-19 after Phase 2 completion*
+*Last updated: 2026-05-20 after Phase 3 completion (milestone v1.0 ready to close)*
