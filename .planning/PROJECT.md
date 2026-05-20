@@ -30,9 +30,22 @@ The portfolio reliably represents Hariraj's professional profile to visitors —
 
 ### Active
 
-<!-- Current scope. Building toward these in the testing milestone. -->
+<!-- Empty between milestones. Populated by /gsd:new-milestone. -->
 
-_All v1 testing requirements validated. Milestone v1.0 ready for completion._
+_No active requirements. Milestone v1.0 shipped 2026-05-20. Run `/gsd:new-milestone` to define the next milestone's scope._
+
+### Candidates for Next Milestone
+
+<!-- Deferred during v1.0; surface during /gsd:new-milestone scoping. -->
+
+- [ ] **QUAL-01:** Coverage reporting via `@vitest/coverage-v8` with a baseline threshold
+- [ ] **QUAL-02:** CI workflow (GitHub Actions) running `npm test` on PRs
+- [ ] **QUAL-03:** Pre-commit hook running `npm test` before commit
+- [ ] **A11Y-01:** Automated a11y assertions via `jest-axe` (or equivalent) on each page
+- [ ] **A11Y-02:** Keyboard navigation tests for the primary nav
+- [ ] Cleanup of dead `.loading` / `.sent-message` / `.error-message` CSS rules (Phase 3 deferred)
+- [ ] REQUIREMENTS.md typo fix: `emailjs.send` → `emailjs.sendForm` (Phase 1/2/3 flagged)
+- [ ] Resume page heading copy ("About Me" vs. "Resume" — Phase 2 deferred)
 
 ### Out of Scope
 
@@ -48,10 +61,12 @@ _All v1 testing requirements validated. Milestone v1.0 ready for completion._
 ## Context
 
 - **Stack:** React 18.3, Vite 5.4, react-router-dom 6.26 (HashRouter), Bootstrap 5.3, `@emailjs/browser` 4.4
-- **Testing libs already installed but not wired up:** `@testing-library/react` 13, `@testing-library/jest-dom` 5, `@testing-library/user-event` 13 — left over from CRA's Jest setup
-- **Vite test config status:** `vite.config.mjs` has NO `test` block. `setupTests.js` imports `@testing-library/jest-dom` (Jest-style). `App.test.js` is the CRA boilerplate that asserts text `/learn react/i` which doesn't exist in `App.jsx`. So `npm test` currently has no test runner at all.
-- **Branch context:** Active branch is `testcases` — this milestone is the formalization of the testing work the branch was created for.
+- **Test stack (v1.0):** Vitest 4.1.6 + jsdom 29.x; `@testing-library/react` 13, `@testing-library/jest-dom` 5, `@testing-library/user-event` 14.5.2 (bumped in Phase 3); single config in `vite.config.mjs` `test` block (no separate `vitest.config.*`); `setupTests.js` registers jest-dom matchers globally; no global mocks (per-test `vi.mock` only).
+- **Test surface shipped (7 files / 18 tests):** `src/App.test.jsx` (5 routes + unknown route), `src/pages/Layout.test.jsx` (banner + nav hrefs + children pass-through), `src/pages/{Home,About,Resume,Portfolio,Contact}.test.jsx` (per-page smoke), plus the Phase 3 `Contact form interactions` describe block (FORM-01/02/04/05; FORM-03 satisfied structurally by module-scope `vi.mock('@emailjs/browser')`).
+- **Production changes during v1.0:** small `App.jsx` refactor to export `AppRoutes` (so tests can wrap it in `MemoryRouter`); `Contact.jsx` refactor from static feedback divs to state-driven `status` enum (`'idle' | 'sending' | 'success' | 'error'`) with `form.reset()` on success and a disabled submit button while sending.
+- **Branch context:** Work shipped on the `testcases` branch (the branch's original purpose). Ready to PR to `v2`.
 - **Deploy target:** GitHub Pages (static) — tests run pre-deploy, not in production.
+- **Known deferred items:** Coverage reporting, CI workflow, pre-commit hooks, a11y assertions, dead CSS cleanup, and the REQUIREMENTS.md `send` vs `sendForm` typo — all surfaced in "Candidates for Next Milestone".
 
 ## Constraints
 
@@ -91,4 +106,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-20 after Phase 3 completion (milestone v1.0 ready to close)*
+*Last updated: 2026-05-20 after v1.0 Testing Coverage milestone shipped*

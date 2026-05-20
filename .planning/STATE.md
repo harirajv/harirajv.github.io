@@ -1,11 +1,11 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.0
-milestone_name: milestone
-status: milestone_complete
-stopped_at: Milestone complete (Phase 3 was final phase)
-last_updated: 2026-05-20T02:35:13.403Z
-last_activity: 2026-05-20
+milestone_name: Testing Coverage
+status: Awaiting next milestone
+stopped_at: Milestone v1.0 shipped — awaiting /gsd:new-milestone
+last_updated: "2026-05-20T02:42:54.500Z"
+last_activity: 2026-05-20 — Milestone v1.0 completed and archived
 progress:
   total_phases: 3
   completed_phases: 3
@@ -18,19 +18,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-19)
+See: .planning/PROJECT.md (updated 2026-05-20 after v1.0 shipped)
 
 **Core value:** The portfolio reliably represents Hariraj's professional profile to visitors — every page renders, navigation works, and the contact form actually delivers messages.
-**Current focus:** Milestone complete
+**Current focus:** Planning next milestone (candidates: coverage reporting + CI, a11y assertions, cleanup items — see PROJECT.md §"Candidates for Next Milestone")
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
-Status: Milestone complete
-Last activity: 2026-05-20
-
-Progress: [██████████] 100%
+Phase: Milestone v1.0 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-05-20 — Milestone v1.0 completed and archived
 
 ## Performance Metrics
 
@@ -62,13 +60,7 @@ Progress: [██████████] 100%
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- Pre-Phase 1: Use Vitest (not Jest) — native Vite integration
-- Pre-Phase 1: Mock EmailJS at the module boundary — deterministic tests, no real email
-- Pre-Phase 1: Keep HashRouter in production, use `MemoryRouter` in tests
-- [Phase ?]: FORM-02 uses a never-resolving promise to capture sendForm call args before form.current.reset() clears the form (Rule 3 deviation)
+Decisions are logged in PROJECT.md Key Decisions table. Full milestone retrospective: `.planning/RETROSPECTIVE.md`. v1.0 shipped — no decisions carrying forward as open questions.
 
 ### Pending Todos
 
@@ -89,3 +81,7 @@ None yet.
 Last session: 2026-05-20T02:30:56.074Z
 Stopped at: Phase 3 context gathered
 Resume file: None
+
+## Operator Next Steps
+
+- Start the next milestone with /gsd-new-milestone
