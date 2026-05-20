@@ -6,15 +6,23 @@ export default class Contact extends React.Component {
     constructor(props) {
         super(props);
         this.form = React.createRef();
+        this.state = { status: 'idle' };
     }
 
     onSubmit = (e) => {
         e.preventDefault();
 
+        this.setState({ status: 'sending' });
+
         emailjs.sendForm('service_eniwifa', 'contact_form', this.form.current, { publicKey: 'I-4RM4Z6x02jtxW5Z'})
             .then(
-                () => { console.log('Success') },
-                (err) => { console.error('Failed...', err.text) }
+                () => {
+                    this.setState({ status: 'success' });
+                    this.form.current.reset();
+                },
+                (_err) => {
+                    this.setState({ status: 'error' });
+                }
             );
     }
 
@@ -64,11 +72,11 @@ export default class Contact extends React.Component {
                                         <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                                     </div>
                                     <div className="my-3">
-                                        <div className="loading">Loading</div>
-                                        <div className="error-message"></div>
-                                        <div className="sent-message">Your message has been sent. Thank you!</div>
+                                        {this.state.status === 'sending' && <div className="loading">Loading</div>}
+                                        {this.state.status === 'error' && <div className="error-message">Failed to send. Please try again.</div>}
+                                        {this.state.status === 'success' && <div className="sent-message">Your message has been sent. Thank you!</div>}
                                     </div>
-                                    <div className="text-center"><button type="submit">Send Message</button></div>
+                                    <div className="text-center"><button type="submit" disabled={this.state.status === 'sending'}>Send Message</button></div>
                                 </form>
                             </div>
                         </div>
