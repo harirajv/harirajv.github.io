@@ -32,11 +32,11 @@ Requirements for this testing milestone. Each maps to roadmap phases.
 
 ### Contact Form
 
-- [ ] **FORM-01**: User can type into name/email/subject/message fields and the values update
-- [ ] **FORM-02**: Submitting the form calls `emailjs.send` (or the project's wrapper) with the entered values
-- [ ] **FORM-03**: `emailjs.send` is mocked in tests — no real network/email call is made
-- [ ] **FORM-04**: Success state is shown after a resolved EmailJS send (assert visible feedback)
-- [ ] **FORM-05**: Failure state is shown after a rejected EmailJS send (assert visible feedback or error message)
+- [x] **FORM-01**: User can type into name/email/subject/message fields and the values update
+- [x] **FORM-02**: Submitting the form calls `emailjs.send` (or the project's wrapper) with the entered values
+- [x] **FORM-03**: `emailjs.send` is mocked in tests — no real network/email call is made
+- [x] **FORM-04**: Success state is shown after a resolved EmailJS send (assert visible feedback)
+- [x] **FORM-05**: Failure state is shown after a rejected EmailJS send (assert visible feedback or error message)
 
 ## v2 Requirements
 
@@ -86,11 +86,11 @@ Which phases cover which requirements. Populated during roadmap creation.
 | PAGE-03 | Phase 2 | Complete |
 | PAGE-04 | Phase 2 | Complete |
 | PAGE-05 | Phase 2 | Complete |
-| FORM-01 | Phase 3 | Pending |
-| FORM-02 | Phase 3 | Pending |
-| FORM-03 | Phase 3 | Pending |
-| FORM-04 | Phase 3 | Pending |
-| FORM-05 | Phase 3 | Pending |
+| FORM-01 | Phase 3 | Complete |
+| FORM-02 | Phase 3 | Complete |
+| FORM-03 | Phase 3 | Complete |
+| FORM-04 | Phase 3 | Complete |
+| FORM-05 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 19 total
