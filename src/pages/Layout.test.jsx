@@ -23,8 +23,9 @@ describe('Layout', () => {
     const portfolioLink = screen.getByRole('link', { name: /Portfolio/i });
     const contactLink = screen.getByRole('link', { name: /Contact/i });
 
-    // About intentionally points to "/" (Layout.jsx:30 maps "About" -> "/")
-    expect(aboutLink).toHaveAttribute('href', '/');
+    expect(screen.getByRole('navigation', { name: /primary/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /hariraj venkatesan/i })).toHaveAttribute('href', '/');
+    expect(aboutLink).toHaveAttribute('href', '/about');
     expect(resumeLink).toHaveAttribute('href', '/resume');
     expect(portfolioLink).toHaveAttribute('href', '/portfolio');
     expect(contactLink).toHaveAttribute('href', '/contact');

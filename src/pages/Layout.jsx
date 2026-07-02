@@ -1,52 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import 'boxicons';
+import { Link, NavLink } from "react-router-dom";
 
-class Layout extends React.Component {
-	header_items = [
-		"About",
-		"Resume",
-		"Portfolio",
-		"Contact"
-	]
+const navItems = [
+  { label: "About", to: "/about" },
+  { label: "Resume", to: "/resume" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact", to: "/contact" }
+];
 
-	header_icons = {
-		"About": "user",
-		"Resume": "file-blank",
-		"Portfolio": "book-content",
-		"Contact": "envelope"
-	}
-
-    render() {
-        return (
-            <>
-				{/* TODO Mobile Nav toggle button pending */}
-
-				<header id="header" className="d-flex flex-column justify-content-center">
-					<nav id="navbar" className="navbar nav-menu">
-						<ul>
-							{this.header_items.map(item => {
-								const identifier = item.toLowerCase()
-								const href_value = item === "About" ? "/" : identifier
-								const icon_value = this.header_icons[item]
-								
-								return (
-									<li key={item}>
-										<Link to={href_value} className="nav-link scrollto">
-											<box-icon name={icon_value}/><span>{item}</span>
-										</Link>
-									</li>
-								)
-							})}
-						</ul>
-					</nav>
-				</header>
-
-				{this.props.children}
-
-            </>
-        );
-    }
+export default function Layout({ children }) {
+  return (
+    <>
+      <header className="site-header">
+        <Link to="/" className="site-brand" aria-label="Hariraj Venkatesan home">
+          <span className="brand-signal" aria-hidden="true" />
+          <span>Hariraj Venkatesan</span>
+        </Link>
+        <nav className="site-nav" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+      </header>
+      {children}
+    </>
+  );
 }
-
-export default Layout;
