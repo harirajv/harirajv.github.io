@@ -24,8 +24,10 @@ describe('App routing', () => {
         <AppRoutes/>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /software engineer for systems that ship/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /i build the systems that make enterprise engineering move faster/i })).toBeInTheDocument();
     expect(screen.getByRole('banner')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^home$/i })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: /^home$/i })).toHaveClass('nav-home-link');
   });
 
   it('renders About at /about', () => {
@@ -52,7 +54,9 @@ describe('App routing', () => {
         <AppRoutes/>
       </MemoryRouter>
     );
-    expect(await screen.findByRole('heading', { name: /portfolio/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /systems with outcomes/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^home$/i })).not.toHaveClass('active');
+    expect(screen.getByRole('link', { name: /^portfolio$/i })).toHaveClass('active');
   });
 
   it('renders Contact at /contact', () => {

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Kidney AI detection illustration</title>
+  <desc id="desc">A medical kidney illustration with circuit nodes, data signals, and an AI prediction panel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#edf7fb"/>
+      <stop offset="0.54" stop-color="#f7fbfd"/>
+      <stop offset="1" stop-color="#e7f1f4"/>
+    </linearGradient>
+    <linearGradient id="kidneyLeft" x1="0.16" x2="0.89" y1="0.06" y2="0.94">
+      <stop offset="0" stop-color="#c95b75"/>
+      <stop offset="0.48" stop-color="#a83f5d"/>
+      <stop offset="1" stop-color="#76314a"/>
+    </linearGradient>
+    <linearGradient id="kidneyRight" x1="0.84" x2="0.11" y1="0.06" y2="0.94">
+      <stop offset="0" stop-color="#d66c82"/>
+      <stop offset="0.5" stop-color="#b54c67"/>
+      <stop offset="1" stop-color="#823650"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#102533"/>
+      <stop offset="1" stop-color="#162d3d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-15%" y="-20%" width="130%" height="145%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#163241" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Public-domain kidney anatomy reference: https://www.flickr.com/photos/133115863@N08/18698414485 -->
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <path d="M34 625 C169 568 267 585 415 622 C569 660 717 676 898 619 C1037 576 1120 578 1200 615 L1200 750 L0 750 L0 646 C11 638 22 631 34 625Z" fill="#dcebf0"/>
+
+  <g fill="none" stroke="#8fb4bf" stroke-width="3" opacity="0.34">
+    <path d="M88 122 H298 C359 122 385 154 437 211"/>
+    <path d="M91 236 H245 C334 236 385 270 433 329"/>
+    <path d="M85 518 H303 C362 518 391 488 448 429"/>
+    <path d="M1112 137 H927 C862 137 820 171 771 230"/>
+    <path d="M1115 492 H940 C856 492 819 462 767 402"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <path d="M447 163 C368 148 294 193 264 272 C239 338 247 430 287 502 C329 578 410 607 474 571 C537 536 542 459 502 408 C483 383 481 358 502 331 C542 278 525 179 447 163Z" fill="url(#kidneyLeft)"/>
+    <path d="M753 163 C832 148 906 193 936 272 C961 338 953 430 913 502 C871 578 790 607 726 571 C663 536 658 459 698 408 C717 383 719 358 698 331 C658 278 675 179 753 163Z" fill="url(#kidneyRight)"/>
+    <path d="M486 327 C448 362 448 405 486 442" fill="none" stroke="#f4a7b5" stroke-width="18" stroke-linecap="round" opacity="0.65"/>
+    <path d="M714 327 C752 362 752 405 714 442" fill="none" stroke="#f4a7b5" stroke-width="18" stroke-linecap="round" opacity="0.65"/>
+    <path d="M570 248 C594 307 595 420 571 497" fill="none" stroke="#7d3147" stroke-width="12" stroke-linecap="round"/>
+    <path d="M630 248 C606 307 605 420 629 497" fill="none" stroke="#7d3147" stroke-width="12" stroke-linecap="round"/>
+    <path d="M600 478 V604" fill="none" stroke="#7d3147" stroke-width="13" stroke-linecap="round"/>
+  </g>
+
+  <g fill="none" stroke="#1fb6a6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M360 242 L243 176 H146"/>
+    <path d="M349 379 L223 379 H139"/>
+    <path d="M840 254 L962 187 H1059"/>
+    <path d="M850 431 L965 499 H1061"/>
+    <path d="M600 190 V95 H706"/>
+    <path d="M600 560 V642 H493"/>
+  </g>
+
+  <g>
+    <circle cx="146" cy="176" r="13" fill="#1fb6a6"/>
+    <circle cx="139" cy="379" r="13" fill="#1fb6a6"/>
+    <circle cx="1059" cy="187" r="13" fill="#1fb6a6"/>
+    <circle cx="1061" cy="499" r="13" fill="#1fb6a6"/>
+    <circle cx="706" cy="95" r="13" fill="#1fb6a6"/>
+    <circle cx="493" cy="642" r="13" fill="#1fb6a6"/>
+    <circle cx="360" cy="242" r="9" fill="#dffbf7" stroke="#1fb6a6" stroke-width="4"/>
+    <circle cx="349" cy="379" r="9" fill="#dffbf7" stroke="#1fb6a6" stroke-width="4"/>
+    <circle cx="840" cy="254" r="9" fill="#dffbf7" stroke="#1fb6a6" stroke-width="4"/>
+    <circle cx="850" cy="431" r="9" fill="#dffbf7" stroke="#1fb6a6" stroke-width="4"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="776" y="82" width="270" height="132" rx="18" fill="url(#panel)" stroke="#2e5060" stroke-width="2"/>
+    <text x="806" y="124" fill="#f2f8f8" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">AI signal</text>
+    <text x="806" y="155" fill="#b6c8cf" font-family="Inter, Arial, sans-serif" font-size="17">clinical indicators</text>
+    <g fill="none" stroke-linecap="round" stroke-width="8">
+      <path d="M807 184 H872" stroke="#1fb6a6"/>
+      <path d="M894 184 H943" stroke="#f3b84f"/>
+      <path d="M964 184 H1015" stroke="#8ab8ff"/>
+    </g>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="154" y="509" width="250" height="118" rx="18" fill="#ffffff" stroke="#c5d7df" stroke-width="2"/>
+    <text x="184" y="551" fill="#263241" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Risk features</text>
+    <text x="184" y="584" fill="#5d7080" font-family="Inter, Arial, sans-serif" font-size="16">albumin, sugar, hemoglobin</text>
+    <path d="M184 607 H374" stroke="#1fb6a6" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

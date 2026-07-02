@@ -1,34 +1,66 @@
 import React from "react";
 
+const pillars = [
+  {
+    number: "01",
+    label: "Secure defaults",
+    title: "Make the secure path the easiest path.",
+    body: "Good systems make the right choice feel natural. I design access, deployment, and infrastructure paths that reduce friction without weakening governance."
+  },
+  {
+    number: "02",
+    label: "Reusable tools",
+    title: "Turn repeated operational pain into reusable tools.",
+    body: "When teams repeat the same reconciliation, deployment, migration, or recovery work, that is a signal to build something reusable instead of another one-off fix."
+  },
+  {
+    number: "03",
+    label: "Recovery-first design",
+    title: "Design for rollback, recovery, and idempotency before scale.",
+    body: "Reliable systems are built around failure paths from the beginning: safe retries, clear ownership boundaries, recoverable deploys, and data flows that tolerate real-world disorder."
+  }
+];
+
 export default function About() {
   return (
     <main className="page-shell">
       <section id="about" className="section-block">
-        <div className="section-kicker">About</div>
-        <h1>Engineering reliable systems from infrastructure to interface.</h1>
+        <div className="section-kicker">Workstyle</div>
+        <h1>How I build reliable systems.</h1>
         <p className="section-lede">
-          I am a software engineer focused on cloud infrastructure, full-stack applications, and data-informed product work.
+          I turn operational friction into secure, reusable systems that help teams ship and recover with less guesswork.
         </p>
 
-        <div className="content-grid">
-          <article className="info-panel">
-            <h2>What I build</h2>
+        <div className="workstyle-intro">
+          <div className="manifesto-panel">
             <p>
-              AWS-backed services, CI/CD workflows, API-driven applications, and React or Angular frontends that make operational complexity easier to use.
+              My work starts where teams lose time: stale data, risky deploys, unclear access, manual recovery, and prototypes that need a production path.
             </p>
-          </article>
-          <article className="info-panel">
-            <h2>How I work</h2>
-            <p>
-              I connect software design, deployment reliability, and practical data skills so teams can ship useful systems with fewer surprises.
-            </p>
-          </article>
-          <article className="info-panel">
-            <h2>Current focus</h2>
-            <p>
-              DevOps engineering, Terraform-based infrastructure, AWS container services, reactive frontends, and disciplined delivery pipelines.
-            </p>
-          </article>
+          </div>
+          <figure className="workstyle-flow-figure">
+            <img
+              className="workstyle-flow"
+              src="/assets/img/devops-toolchain.svg"
+              alt="DevOps toolchain loop showing plan, create, verify, package, release, configure, monitor, and version control."
+            />
+            <figcaption>
+              DevOps workflow illustration by Kharnagy, licensed{" "}
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div className="workstyle-pillars" aria-label="Workstyle pillars">
+          {pillars.map((pillar) => (
+            <article className="workstyle-pillar" key={pillar.label}>
+              <span className="workstyle-pillar-number">{pillar.number}</span>
+              <div>
+                <h2>{pillar.label}</h2>
+                <strong>{pillar.title}</strong>
+                <p>{pillar.body}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </main>

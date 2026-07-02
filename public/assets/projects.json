@@ -1,52 +1,98 @@
 {
-    "projects": [
+  "platformProjects": [
+    {
+      "name": "Real-Time CDC System",
+      "category": "Enterprise",
+      "problem": "Enterprise order and ERP workflows depended on stale synchronization patterns that created reconciliation work and slowed operational decisions.",
+      "platform_move": "Architected an event-driven CDC system that streamed database changes through governed messaging paths and used schema-driven onboarding for new tables.",
+      "outcome": "Processed 12M+ daily change events, reclaimed 12 operational hours per week, and reduced manual reconciliation pressure across downstream systems.",
+      "tech_tags": "Kafka,CDC,Debezium,PostgreSQL,DLQ,CloudWatch"
+    },
+    {
+      "name": "Zero-Trust Infrastructure Automation",
+      "category": "Enterprise",
+      "problem": "Cloud delivery needed stronger governance, safer deployment boundaries, and less dependence on broad, long-lived access patterns.",
+      "platform_move": "Standardized Terraform modules, AWS OIDC federation, scoped IAM policies, private connectivity, and rollback-aware ECS/Fargate deployment paths.",
+      "outcome": "Removed static deployment credentials, improved infrastructure repeatability, and gave teams a secure default path for production delivery.",
+      "tech_tags": "Terraform,AWS,OIDC,IAM,PrivateLink,ECS,Fargate"
+    },
+    {
+      "name": "AI Enablement Systems",
+      "category": "Enterprise",
+      "problem": "Internal AI and data prototypes were difficult to move from individual machines into secure, governed production workflows.",
+      "platform_move": "Operationalized AI workflows with Databricks, Bedrock-backed RAG, MCP developer skills, CI assistants, and AIOps automation.",
+      "outcome": "Improved Databricks pipeline development velocity by 40% and lowered incident MTTR by roughly 25% through targeted automation.",
+      "tech_tags": "Databricks,Bedrock,RAG,MCP,GitHub Actions,AIOps"
+    },
+    {
+      "name": "CI/CD & Developer Tooling",
+      "category": "Enterprise",
+      "problem": "Delivery feedback loops were slow, deployment paths were manual, and quality signals arrived too late in the development cycle.",
+      "platform_move": "Built faster CI/CD tooling with immutable builds, automated quality gates, containerized pipelines, and developer-facing failure feedback.",
+      "outcome": "Reduced pipeline latency by 75% in earlier delivery work and helped modern teams move toward 4-6 minute deployment cycles.",
+      "tech_tags": "GitHub Actions,Jenkins,Docker,ECR,SonarQube,CodeQL"
+    },
+    {
+      "name": "Customer Data Import System",
+      "category": "Enterprise",
+      "problem": "Enterprise customer onboarding needed secure, reliable migration paths for large relational datasets from external SaaS systems.",
+      "platform_move": "Built a queue-driven import system with Kubernetes workers, secure OAuth integrations, S3 multipart uploads, and tenant-scoped data boundaries.",
+      "outcome": "Supported 400+ enterprise client migrations while preserving relational integrity and improving large-file ingestion reliability.",
+      "tech_tags": "Kubernetes,SQS,S3,OAuth,Worker Pools,Tenant Isolation"
+    }
+  ],
+  "earlierProjects": [
+    {
+      "name": "CSP Cost Optimization",
+      "category": "Data/ML",
+      "image_src": "Cloud-Cost.jpg",
+      "details_txt": "Decision-support model using Analytic Hierarchy Process techniques to reason about cloud service provider cost optimization and profitability tradeoffs.",
+      "details_link": "https://github.com/harirajv/CSP-profit-maximisation",
+      "tech_tags": "Python,Decision Support"
+    },
+    {
+      "name": "Anchor-Free Pedestrian Detection",
+      "category": "Data/ML",
+      "image_src": "pedestrian.webp",
+      "details_txt": "Computer vision project using residual networks, anchor-free detection, and feature pyramid networks to improve pedestrian detection in challenging scenes.",
+      "details_link": "",
+      "paper_links": [
         {
-            "name": "CSP Cost Optimization",
-            "category": "Web",
-            "image_src": "Cloud-Cost.jpg",
-            "details_txt": "An Analytic Hierarchy Process powered tool to optimize expenses of cloud service providers to maximize profitability without affecting brand loyalty of paying customers.",
-            "details_link": "https://github.com/harirajv/CSP-profit-maximisation",
-            "tech_tags": "Python"
-        },
-        {
-            "name": "Anchor-free Pedestrian Detection enhanced by FPN",
-            "category": "AI",
-            "image_src": "pedestrian.webp",
-            "details_txt": "A pedestrian detection system for autonomous vehicles was developed using advanced techniques like Residual Neural Networks, Anchor-free algorithms, and Feature Pyramid Networks, significantly enhancing accuracy across challenging conditions.",
-            "details_link": "",
-            "tech_tags": "Computer Vision,PyTorch"
-        },
-        {
-            "name": "Indian Language Identifier",
-            "category": "AI",
-            "image_src": "language.png",
-            "details_txt": "An automatic speech recognition system was developed to identify Indian languages, utilizing Mel Frequency Cepstral Coefficients extracted from news clips with Python Speech Features library.",
-            "details_link": "https://github.com/harirajv/Automatic-Language-Identification",
-            "tech_tags": "NLP,Scikit-Learn"
-        },
-        {
-            "name": "Credit Card Fraud Detection",
-            "category": "AI",
-            "image_src": "credit.jpg",
-            "details_txt": "Developed a Credit Card Fraud Detection system that analyzes transaction data to identify spending anomalies and potential fraud, ensuring the anonymity of financial features.",
-            "details_link": "",
-            "tech_tags": "Unbalanced Data,Data Science"
-        },
-        {
-            "name": "Chronic Kidney Disease Detection",
-            "category": "AI",
-            "image_src": "medical.png",
-            "details_txt": "Devised a data-driven model to enable early detection of Chronic Kidney Disease using clinical data such as sugar, albumin, and hemoglobin levels.",
-            "details_link": "",
-            "tech_tags": "Data Scarcity,ML in Healthcare"
-        },
-        {
-            "name": "HackerNews Mobile Reader",
-            "category": "Web",
-            "image_src": "news.png",
-            "details_txt": "Developed a responsive Hacker News Mobile Reader app with React JS, featuring article fetching, social media sharing, and single sign-on via Google and Facebook.",
-            "details_link": "https://github.com/harirajv/hackernews",
-            "tech_tags": "React"
+          "label": "Springer",
+          "url": "https://link.springer.com/chapter/10.1007/978-981-19-2347-0_39"
         }
-    ]
+      ],
+      "tech_tags": "Computer Vision,PyTorch"
+    },
+    {
+      "name": "Indian Language Identifier",
+      "category": "Data/ML",
+      "image_src": "language.png",
+      "details_txt": "Speech classification project that identified Indian languages from audio features extracted from news clips.",
+      "details_link": "https://github.com/harirajv/Automatic-Language-Identification",
+      "paper_links": [
+        {
+          "label": "IEEE",
+          "url": "https://ieeexplore.ieee.org/abstract/document/8724070"
+        }
+      ],
+      "tech_tags": "NLP,Scikit-Learn"
+    },
+    {
+      "name": "Credit Card Fraud Detection",
+      "category": "Data/ML",
+      "image_src": "credit.jpg",
+      "details_txt": "Data science project for identifying anomalous transaction behavior in anonymized, imbalanced financial data.",
+      "details_link": "",
+      "tech_tags": "Data Science,Imbalanced Data"
+    },
+    {
+      "name": "Chronic Kidney Disease Detection",
+      "category": "Data/ML",
+      "image_src": "kidney-ai-detection.svg",
+      "details_txt": "Healthcare ML project exploring early chronic kidney disease detection from clinical indicators such as sugar, albumin, and hemoglobin levels.",
+      "details_link": "",
+      "tech_tags": "Healthcare ML,Data Scarcity"
+    }
+  ]
 }

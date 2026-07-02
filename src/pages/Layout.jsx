@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { HouseDoorFill } from "react-bootstrap-icons";
 
 const navItems = [
+  { label: "Home", to: "/", icon: HouseDoorFill, end: true, className: "nav-home-link" },
   { label: "About", to: "/about" },
   { label: "Resume", to: "/resume" },
   { label: "Portfolio", to: "/portfolio" },
@@ -21,8 +23,14 @@ export default function Layout({ children }) {
             <NavLink
               key={item.to}
               to={item.to}
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+              end={item.end}
+              className={({ isActive }) => [
+                "nav-link",
+                item.className,
+                isActive ? "active" : null
+              ].filter(Boolean).join(" ")}
             >
+              {item.icon && <item.icon className="nav-icon" aria-hidden="true" focusable="false" />}
               {item.label}
             </NavLink>
           ))}

@@ -5,7 +5,7 @@ export function parseProjectTags(tags = "") {
     .filter(Boolean);
 }
 
-export async function loadProjects() {
+export async function loadPortfolioSections() {
   const response = await fetch("/assets/projects.json");
 
   if (!response.ok) {
@@ -13,7 +13,23 @@ export async function loadProjects() {
   }
 
   const data = await response.json();
-  return data.projects || [];
+
+  if (Array.isArray(data.projects)) {
+    return {
+      platformProjects: data.projects,
+      earlierProjects: []
+    };
+  }
+
+  return {
+    platformProjects: data.platformProjects || [],
+    earlierProjects: data.earlierProjects || []
+  };
+}
+
+export async function loadProjects() {
+  const { platformProjects, earlierProjects } = await loadPortfolioSections();
+  return [...platformProjects, ...earlierProjects];
 }
 
 export function projectImagePath(imageSrc) {
