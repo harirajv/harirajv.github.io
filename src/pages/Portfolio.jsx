@@ -91,18 +91,18 @@ export default function Portfolio() {
     <main className="page-shell">
       <section id="portfolio" className="section-block">
         <div className="section-kicker">Portfolio</div>
-        <h1>Platform work for enterprise modernization.</h1>
+        <h1>Selected engineering work.</h1>
         <p className="section-lede">
-          Case studies across real-time data, secure cloud foundations, AI-enabled engineering systems, delivery tooling, and earlier data/ML work.
+          A mix of enterprise systems work and earlier data/ML projects, grouped so the strongest engineering work is easy to scan first.
         </p>
 
         {loading && <p className="state-message">Loading portfolio...</p>}
         {!loading && error && <p className="state-message">Portfolio is temporarily unavailable. Please check back shortly.</p>}
         {!loading && !error && (
           <>
-            <section className="portfolio-section" aria-labelledby="platform-work-heading">
+            <section className="portfolio-section" aria-labelledby="enterprise-systems-heading">
               <div className="section-kicker">Primary work</div>
-              <h2 id="platform-work-heading">Platform Work</h2>
+              <h2 id="enterprise-systems-heading">Enterprise Systems</h2>
               <div className="project-grid platform-grid">
                 {platformProjects.map((project) => (
                   <PlatformProjectCard project={project} key={project.name} />

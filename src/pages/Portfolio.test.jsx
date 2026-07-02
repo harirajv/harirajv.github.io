@@ -5,7 +5,7 @@ const portfolioData = {
   platformProjects: [
     {
       name: 'Real-Time CDC Platform',
-      category: 'Platform Work',
+      category: 'Enterprise Systems',
       problem: 'Legacy synchronization created stale operational data and reconciliation work.',
       platform_move: 'Built an event-driven CDC platform for enterprise order and ERP workflows.',
       outcome: 'Processed 12M+ daily change events while reducing manual reconciliation overhead.',
@@ -38,8 +38,9 @@ describe('Portfolio', () => {
     render(<Portfolio />);
 
     expect(screen.getByText(/loading portfolio/i)).toBeInTheDocument();
-    expect(await screen.findByRole('heading', { name: /^platform work$/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /^enterprise systems$/i })).toBeInTheDocument();
     expect(await screen.findByRole('heading', { name: /^earlier data\/ml work$/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /selected engineering work/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /real-time cdc platform/i })).toBeInTheDocument();
     expect(screen.getByText(/12m\+ daily change events/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /indian language identifier/i })).toBeInTheDocument();

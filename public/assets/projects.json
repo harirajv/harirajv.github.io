@@ -2,7 +2,7 @@
   "platformProjects": [
     {
       "name": "Real-Time CDC Platform",
-      "category": "Platform Work",
+      "category": "Enterprise Systems",
       "problem": "Enterprise order and ERP workflows depended on stale synchronization patterns that created reconciliation work and slowed operational decisions.",
       "platform_move": "Architected an event-driven CDC platform that streamed database changes through governed messaging paths and used schema-driven onboarding for new tables.",
       "outcome": "Processed 12M+ daily change events, reclaimed 12 operational hours per week, and reduced manual reconciliation pressure across downstream systems.",
@@ -10,7 +10,7 @@
     },
     {
       "name": "Zero-Trust Infrastructure Automation",
-      "category": "Platform Work",
+      "category": "Enterprise Systems",
       "problem": "Cloud delivery needed stronger governance, safer deployment boundaries, and less dependence on broad, long-lived access patterns.",
       "platform_move": "Standardized Terraform modules, AWS OIDC federation, scoped IAM policies, private connectivity, and rollback-aware ECS/Fargate deployment paths.",
       "outcome": "Removed static deployment credentials, improved infrastructure repeatability, and gave teams a secure default path for production delivery.",
@@ -18,7 +18,7 @@
     },
     {
       "name": "AI Enablement Platform",
-      "category": "Platform Work",
+      "category": "Enterprise Systems",
       "problem": "Internal AI and data prototypes were difficult to move from individual machines into secure, governed production workflows.",
       "platform_move": "Operationalized AI workflows with Databricks, Bedrock-backed RAG, MCP developer skills, CI assistants, and AIOps automation.",
       "outcome": "Improved Databricks pipeline development velocity by 40% and lowered incident MTTR by roughly 25% through targeted platform automation.",
@@ -26,7 +26,7 @@
     },
     {
       "name": "CI/CD Platform & Developer Tooling",
-      "category": "Platform Work",
+      "category": "Enterprise Systems",
       "problem": "Delivery feedback loops were slow, deployment paths were manual, and quality signals arrived too late in the development cycle.",
       "platform_move": "Built faster CI/CD tooling with immutable builds, automated quality gates, containerized pipelines, and developer-facing failure feedback.",
       "outcome": "Reduced pipeline latency by 75% in earlier platform work and helped modern teams move toward 4-6 minute deployment cycles.",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Customer Data Import Platform",
-      "category": "Platform Work",
+      "category": "Enterprise Systems",
       "problem": "Enterprise customer onboarding needed secure, reliable migration paths for large relational datasets from external SaaS systems.",
       "platform_move": "Built a queue-driven import platform with Kubernetes workers, secure OAuth integrations, S3 multipart uploads, and tenant-scoped data boundaries.",
       "outcome": "Supported 400+ enterprise client migrations while preserving relational integrity and improving large-file ingestion reliability.",

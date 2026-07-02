@@ -27,9 +27,9 @@ export default function Contact() {
     <main className="page-shell">
       <section id="contact" className="section-block contact">
         <div className="section-kicker">Contact</div>
-        <h1>Let's talk platform engineering.</h1>
+        <h1>Let's connect.</h1>
         <p className="section-lede">
-          Reach out about enterprise modernization, platform engineering, secure cloud foundations, real-time data systems, or AI-enabled internal tooling.
+          Reach out about engineering roles, technical collaboration, or systems work.
         </p>
 
         <div className="direct-contact-grid">

@@ -881,6 +881,28 @@ textarea.form-control {
   }
 }
 
+.resume-preview-shell {
+  margin-top: clamp(28px, 5vw, 48px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.resume-preview {
+  display: block;
+  width: 100%;
+  min-height: min(78vh, 920px);
+  border: 0;
+  background: var(--panel-light);
+}
+
+@media (max-width: 760px) {
+  .resume-preview {
+    min-height: 70vh;
+  }
+}
+
 .direct-contact-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
