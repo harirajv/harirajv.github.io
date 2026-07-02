@@ -26,3 +26,4 @@ yarn-error.log*
 .claude
 .codex/
 .superpowers/
+docs/superpowers/
