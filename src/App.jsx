@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
   Routes
 } from 'react-router-dom';
@@ -28,9 +28,9 @@ export function AppRoutes() {
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <AppRoutes/>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

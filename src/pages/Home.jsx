@@ -1,44 +1,100 @@
 import React from "react";
-import Typed from "typed.js";
+import { Link } from "react-router-dom";
+import { loadProjects, parseProjectTags } from "../projectData";
 
-class Home extends React.Component {
+const metrics = [
+  { value: "3+", label: "years building production software" },
+  { value: "75%", label: "test pipeline runtime reduction" },
+  { value: "AWS", label: "ECS, Fargate, Route 53, Terraform" },
+  { value: "MS", label: "Software Engineering, ASU" }
+];
 
-    componentDidMount() {
-        const options = {
-            strings: [
-                "Full-Stack Developer",
-                "DevOps Engineer",
-                "Cloud Evangelist"
-            ],
-            typeSpeed: 75,
-            backSpeed: 75,
-            loop: true
-        };
+export default function Home() {
+  const [featuredProjects, setFeaturedProjects] = React.useState([]);
+  const [projectsLoaded, setProjectsLoaded] = React.useState(false);
 
-        this.typed = new Typed(this.el, options);
-    }
+  React.useEffect(() => {
+    let mounted = true;
 
-    componentWillUnmount() {
-        this.typed.destroy();
-    }
+    loadProjects()
+      .then((projects) => {
+        if (mounted) {
+          setFeaturedProjects(projects.slice(0, 3));
+        }
+      })
+      .catch(() => {
+        if (mounted) {
+          setFeaturedProjects([]);
+        }
+      })
+      .finally(() => {
+        if (mounted) {
+          setProjectsLoaded(true);
+        }
+      });
 
-    render() {
-        return (
-            <section id="hero" className="d-flex flex-column justify-content-center">
-                {/* <div className="container" data-aos="zoom-in" data-aos-delay="100"> */}
-                <div className="container">
-                    <p>My name is</p>
-                    <h1>Hariraj Venkatesan</h1>
-                    <p>I'm a <span ref={(el) => { this.el = el; }} /></p>
-                    <div className="social-links">
-                        <a href="mailto:hvenka17@asu.edu" className="email"><box-icon type='solid' name="envelope"/></a>
-                        <a href="https://www.linkedin.com/in/hariraj-venkatesan/" className="linkedin"><box-icon type='logo' name="linkedin"/></a>
-                        <a href="https://github.com/harirajv" className="github"><box-icon type='logo' name="github"/></a>
-                    </div>
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  return (
+    <main>
+      <section id="hero" className="hero-showcase">
+        <div className="hero-copy">
+          <p className="terminal-line">$ building cloud systems, data products, and reliable delivery pipelines</p>
+          <h1>Software engineer for systems that ship.</h1>
+          <p className="hero-summary">
+            DevOps engineer and full-stack developer focused on AWS infrastructure, scalable web services, CI/CD, and practical data systems.
+          </p>
+          <div className="hero-actions">
+            <Link className="button primary" to="/portfolio">View Projects</Link>
+            <a className="button" href="/assets/resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+            <Link className="button" to="/contact">Contact</Link>
+          </div>
+        </div>
+        <div className="systems-map" aria-hidden="true">
+          <span className="system-line line-one" />
+          <span className="system-line line-two" />
+          <span className="system-line line-three" />
+          <div className="system-node node-aws"><strong>AWS</strong><span>ECS, Route 53, Fargate</span></div>
+          <div className="system-node node-delivery"><strong>Delivery</strong><span>Terraform, Jenkins, CI/CD</span></div>
+          <div className="system-node node-apps"><strong>Apps</strong><span>React, Angular, APIs</span></div>
+          <div className="system-node node-data"><strong>Data</strong><span>ML, CV, NLP</span></div>
+        </div>
+      </section>
+
+      <section className="metric-grid" aria-label="Career highlights">
+        {metrics.map((metric) => (
+          <article className="metric-card" key={metric.label}>
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </article>
+        ))}
+      </section>
+
+      <section className="section-block home-work">
+        <div className="section-kicker">Featured work</div>
+        <h2>Project signals</h2>
+        {!projectsLoaded && <p className="state-message">Loading featured projects...</p>}
+        {projectsLoaded && featuredProjects.length === 0 && (
+          <p className="state-message">Featured projects are temporarily unavailable.</p>
+        )}
+        {featuredProjects.length > 0 && (
+          <div className="project-grid compact">
+            {featuredProjects.map((project) => (
+              <article className="project-card compact-card" key={project.name}>
+                <div className="project-category">{project.category}</div>
+                <h3>{project.name}</h3>
+                <p>{project.details_txt}</p>
+                <div className="tag-list">
+                  {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
-            </section>
-        );
-    }
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+    </main>
+  );
 }
-
-export default Home;

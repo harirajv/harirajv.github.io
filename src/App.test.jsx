@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import App, { AppRoutes } from './App';
+import { AppRoutes } from './App';
 
 vi.mock('typed.js', () => ({
   default: class { constructor() {} destroy() {} }
@@ -19,12 +19,12 @@ describe('App routing', () => {
   });
 
   it('renders Home at /', () => {
-    const { container } = render(
+    render(
       <MemoryRouter initialEntries={['/']}>
         <AppRoutes/>
       </MemoryRouter>
     );
-    expect(container.querySelector('#hero')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /software engineer for systems that ship/i })).toBeInTheDocument();
     expect(screen.getByRole('banner')).toBeInTheDocument();
   });
 
@@ -46,13 +46,13 @@ describe('App routing', () => {
     expect(container.querySelector('#resume')).toBeInTheDocument();
   });
 
-  it('renders Portfolio at /portfolio', () => {
-    const { container } = render(
+  it('renders Portfolio at /portfolio', async () => {
+    render(
       <MemoryRouter initialEntries={['/portfolio']}>
         <AppRoutes/>
       </MemoryRouter>
     );
-    expect(container.querySelector('#portfolio')).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /portfolio/i })).toBeInTheDocument();
   });
 
   it('renders Contact at /contact', () => {
