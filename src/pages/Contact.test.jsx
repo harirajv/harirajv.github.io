@@ -15,7 +15,8 @@ describe('Contact', () => {
     expect(container.querySelector('input[name="user_email"]')).toBeInTheDocument();
     expect(container.querySelector('input[name="subject"]')).toBeInTheDocument();
     expect(container.querySelector('textarea[name="message"]')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Send Message/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /contact/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Send Message/i })).toBeEnabled();
   });
 });
 

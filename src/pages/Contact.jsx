@@ -28,58 +28,58 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <main id="main">
-                <section id="contact" className="contact">
-                    <div className="container" data-aos="fade-up">
-                        <div className="section-title">
-                            <h2>Contact</h2>
+            <main className="page-shell">
+                <section id="contact" className="section-block contact">
+                    <div className="section-kicker">Contact</div>
+                    <h1>Contact</h1>
+                    <p className="section-lede">
+                        Reach out for software engineering, cloud infrastructure, DevOps, or full-stack opportunities.
+                    </p>
+                    <div className="contact-grid">
+                        <div className="info contact-panel">
+                            <div className="contact-method">
+                                <a href="https://maps.app.goo.gl/ty7LWwSBRMGaTBSQ8" aria-label="Open location map"><i><GeoAlt/></i></a>
+                                <h2>Location</h2>
+                                <p>Tempe, AZ</p>
+                            </div>
+                            <div className="contact-method">
+                                <a href="mailto:hvenka17@asu.edu" aria-label="Email Hariraj"><i><Envelope/></i></a>
+                                <h2>Email</h2>
+                                <p>hvenka17@asu.edu</p>
+                            </div>
+                            <div className="contact-method">
+                                <a href="tel:4808751333" aria-label="Call Hariraj"><i><Phone/></i></a>
+                                <h2>Call</h2>
+                                <p>+1&nbsp;(480)&nbsp;875&#8209;1333</p>
+                            </div>
                         </div>
-                        <div className="row mt-1">
-                            <div className="col-lg-4">
-                                <div className="info">
-                                    <div className="address">
-                                        <a href="https://maps.app.goo.gl/ty7LWwSBRMGaTBSQ8"><i><GeoAlt/></i></a>
-                                        <h4>Location:</h4>
-                                        <p>Tempe, AZ</p>
-                                    </div>
-                                    <div className="email">
-                                        <a href="mailto:hvenka17@asu.edu"><i><Envelope/></i></a>
-                                        <h4>Email:</h4>
-                                        <p>hvenka17@asu.edu</p>
-                                    </div>
-                                    <div className="phone">
-                                        <a href="tel:4808751333"><i><Phone/></i></a>
-                                        <h4>Call:</h4>
-                                        <p>+1&nbsp;(480)&nbsp;875&#8209;1333</p>
-                                    </div>
+
+                        <form className="php-email-form" ref={this.form} onSubmit={this.onSubmit}>
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label htmlFor="name">Name</label>
+                                    <input type="text" name="user_name" className="form-control" id="name" placeholder="Your Name" required/>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="email" className="form-control" name="user_email" id="email" placeholder="Your Email" required/>
                                 </div>
                             </div>
-
-                            <div className="col-lg-8 mt-5 mt-lg-0">
-                                <form className="php-email-form" ref={this.form} onSubmit={this.onSubmit}>
-                                    <div className="row">
-                                        <div className="col-md-6 form-group">
-                                            <input type="text" name="user_name" className="form-control" id="name" placeholder="Your Name" required/>
-                                        </div>
-                                        <div className="col-md-6 form-group mt-3 mt-md-0">
-                                            <input type="email" className="form-control" name="user_email" id="email" placeholder="Your Email" required/>
-                                        </div>
-                                    </div>
-                                    <div className="form-group mt-3">
-                                        <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required/>
-                                    </div>
-                                    <div className="form-group mt-3">
-                                        <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                                    </div>
-                                    <div className="my-3">
-                                        {this.state.status === 'sending' && <div className="loading">Loading</div>}
-                                        {this.state.status === 'error' && <div className="error-message">Failed to send. Please try again.</div>}
-                                        {this.state.status === 'success' && <div className="sent-message">Your message has been sent. Thank you!</div>}
-                                    </div>
-                                    <div className="text-center"><button type="submit" disabled={this.state.status === 'sending'}>Send Message</button></div>
-                                </form>
+                            <div className="form-group">
+                                <label htmlFor="subject">Subject</label>
+                                <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required/>
                             </div>
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="message">Message</label>
+                                <textarea className="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                            </div>
+                            <div className="form-status">
+                                {this.state.status === 'sending' && <div className="loading">Loading</div>}
+                                {this.state.status === 'error' && <div className="error-message">Failed to send. Please try again.</div>}
+                                {this.state.status === 'success' && <div className="sent-message">Your message has been sent. Thank you!</div>}
+                            </div>
+                            <button type="submit" disabled={this.state.status === 'sending'}>Send Message</button>
+                        </form>
                     </div>
                 </section>
             </main>
