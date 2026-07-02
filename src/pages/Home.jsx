@@ -87,15 +87,40 @@ export default function Home() {
             <a className="button" href="https://github.com/harirajv" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
-        <div className="systems-map" aria-hidden="true">
-          <span className="system-line line-one" />
-          <span className="system-line line-two" />
-          <span className="system-line line-three" />
-          <div className="system-node node-aws"><strong>Secure Cloud</strong><span>Terraform, OIDC, PrivateLink</span></div>
-          <div className="system-node node-delivery"><strong>Real-Time Data</strong><span>Kafka, CDC, DLQ recovery</span></div>
-          <div className="system-node node-apps"><strong>AI Enablement</strong><span>Databricks, RAG, MCP</span></div>
-          <div className="system-node node-data"><strong>Velocity</strong><span>Faster deploys, lower MTTR</span></div>
-        </div>
+        <section className="control-plane" aria-label="Control Plane">
+          <div className="control-plane-header">
+            <div>
+              <span className="control-plane-kicker">Control Plane</span>
+              <strong>Enterprise modernization live</strong>
+            </div>
+            <span className="status-pill">Healthy</span>
+          </div>
+          <div className="control-plane-grid" aria-label="Platform signals">
+            <article className="signal-card">
+              <span>CDC stream</span>
+              <strong>12M+ events/day</strong>
+            </article>
+            <article className="signal-card">
+              <span>Secure deploy</span>
+              <strong>OIDC + PrivateLink</strong>
+            </article>
+            <article className="signal-card">
+              <span>AI recovery</span>
+              <strong>25% lower MTTR</strong>
+            </article>
+          </div>
+          <div className="event-stream" aria-label="Delivery event stream">
+            <div><span>09:42</span><strong>schema contract verified</strong></div>
+            <div><span>09:44</span><strong>blue/green release staged</strong></div>
+            <div><span>09:47</span><strong>dead-letter replay cleared</strong></div>
+            <div><span>09:49</span><strong>runbook assistant updated</strong></div>
+          </div>
+          <div className="control-plane-metrics" aria-label="Operational outcomes">
+            <span>4-6 min deploys</span>
+            <span>12 hrs/week reclaimed</span>
+            <span>rollback-ready paths</span>
+          </div>
+        </section>
       </section>
 
       <section className="section-block pillar-section">

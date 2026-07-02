@@ -61,8 +61,13 @@ describe('Home', () => {
     expect(screen.getByText(/real-time data platforms, zero-trust cloud infrastructure, and ai enablement/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /view platform work/i })).toHaveAttribute('href', '/portfolio');
     expect(screen.getByRole('link', { name: /email me/i })).toHaveAttribute('href', 'mailto:harirajv@gmail.com');
-    expect(screen.getByText(/12m\+/i)).toBeInTheDocument();
-    expect(screen.getByText(/4-6 min/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/12m\+/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/4-6 min/i).length).toBeGreaterThan(0);
+    expect(screen.getByRole('region', { name: /control plane/i })).toBeInTheDocument();
+    expect(screen.getByText(/cdc stream/i)).toBeInTheDocument();
+    expect(screen.getByText(/secure deploy/i)).toBeInTheDocument();
+    expect(screen.getByText(/ai recovery/i)).toBeInTheDocument();
+    expect(document.querySelector('.system-line')).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /real-time data platforms/i })).toBeInTheDocument();
     expect(await screen.findByRole('heading', { name: /real-time cdc platform/i })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: /ci\/cd platform & developer tooling/i })).not.toBeInTheDocument();
