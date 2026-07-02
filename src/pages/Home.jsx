@@ -4,7 +4,7 @@ import { loadPortfolioSections, parseProjectTags } from "../projectData";
 
 const pillars = [
   {
-    title: "Real-Time Data Platforms",
+    title: "Real-Time Data Systems",
     summary: "Event-driven systems that keep enterprise operations synchronized when stale data creates business risk.",
     tags: ["Kafka", "CDC", "Debezium", "Idempotency"]
   },
@@ -29,18 +29,62 @@ const metrics = [
 
 const timeline = [
   {
+    years: "2015-2017",
     company: "Symantec",
+    logo: { src: "/assets/logos/norton-favicon.ico", tone: "symantec" },
     focus: "Enterprise extension infrastructure and resilient communication primitives."
   },
   {
+    years: "2017-2023",
     company: "Freshworks",
-    focus: "Customer import platforms, distributed auth, CI/CD tooling, and modernization work."
+    logo: { src: "/assets/logos/freshworks-favicon.ico", tone: "freshworks" },
+    focus: "Customer import systems, distributed auth, CI/CD tooling, and modernization work."
   },
   {
+    years: "2023-Present",
     company: "Master Electronics",
-    focus: "Platform ownership across real-time data, secure cloud foundations, delivery, and AI enablement."
+    logo: { src: "/assets/logos/master-electronics.svg", tone: "master" },
+    focus: "Ownership across real-time data, secure cloud foundations, delivery, and AI enablement."
   }
 ];
+
+const productLogos = {
+  AWS: { src: "/assets/logos/aws.svg", tone: "aws" },
+  "AWS OIDC": { src: "/assets/logos/aws-iam.svg", tone: "aws" },
+  Bedrock: { src: "/assets/logos/amazon-bedrock.svg", tone: "aws" },
+  "Bedrock RAG": { src: "/assets/logos/amazon-bedrock.svg", tone: "aws" },
+  CloudWatch: { src: "/assets/logos/aws-cloudwatch.svg", tone: "aws" },
+  Databricks: { src: "/assets/logos/databricks.svg", tone: "databricks" },
+  Debezium: { src: "/assets/logos/debezium-favicon.ico", tone: "debezium" },
+  Docker: { src: "/assets/logos/docker.svg", tone: "docker" },
+  ECS: { src: "/assets/logos/aws-ecs.svg", tone: "aws" },
+  "ECS/Fargate": { src: "/assets/logos/aws-fargate.svg", tone: "aws" },
+  Fargate: { src: "/assets/logos/aws-fargate.svg", tone: "aws" },
+  "GitHub Actions": { src: "/assets/logos/github-actions.svg", tone: "github" },
+  Kafka: { src: "/assets/logos/apache-kafka.svg", tone: "kafka" },
+  PostgreSQL: { src: "/assets/logos/postgresql-favicon.ico", tone: "postgres" },
+  Terraform: { src: "/assets/logos/terraform.svg", tone: "terraform" }
+};
+
+const techLabels = {
+  Bedrock: "Amazon Bedrock",
+  "Bedrock RAG": "Amazon Bedrock"
+};
+
+function TechTag({ tag }) {
+  const logo = productLogos[tag];
+  const label = techLabels[tag] || tag;
+  const className = ["tech-tag", logo ? "tech-product-tag" : "tech-concept-tag", logo?.tone ? `tech-logo-${logo.tone}` : ""]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <span className={className}>
+      {logo && <img className="tech-logo-icon" src={logo.src} alt="" aria-hidden="true" />}
+      <em>{label}</em>
+    </span>
+  );
+}
 
 export default function Home() {
   const [featuredProjects, setFeaturedProjects] = React.useState([]);
@@ -76,15 +120,24 @@ export default function Home() {
       <section id="hero" className="hero-showcase platform-hero">
         <div className="hero-copy">
           <p className="terminal-line">$ platform engineering for enterprise modernization</p>
-          <h1>I build the platforms that make enterprise engineering move faster.</h1>
+          <h1>I build the systems that make enterprise engineering move faster.</h1>
           <p className="hero-summary">
-            Real-time data platforms, zero-trust cloud infrastructure, and AI enablement for enterprises modernizing legacy systems.
+            Real-time data, zero-trust cloud infrastructure, and AI enablement for enterprises modernizing legacy systems.
           </p>
           <div className="hero-actions">
-            <Link className="button primary" to="/portfolio">View platform work</Link>
-            <a className="button" href="mailto:harirajv@gmail.com">Email me</a>
-            <a className="button" href="https://linkedin.com/in/hariraj-venkatesan" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a className="button" href="https://github.com/harirajv" target="_blank" rel="noreferrer">GitHub</a>
+            <Link className="button primary" to="/portfolio">View projects</Link>
+            <a className="button" href="mailto:harirajv@gmail.com">
+              <img className="button-favicon" src="/assets/logos/gmail-favicon.ico" alt="" aria-hidden="true" />
+              Email me
+            </a>
+            <a className="button" href="https://linkedin.com/in/hariraj-venkatesan" target="_blank" rel="noreferrer">
+              <img className="button-favicon" src="/assets/logos/linkedin-favicon.ico" alt="" aria-hidden="true" />
+              LinkedIn
+            </a>
+            <a className="button" href="https://github.com/harirajv" target="_blank" rel="noreferrer">
+              <img className="button-favicon" src="/assets/logos/github-favicon.svg" alt="" aria-hidden="true" />
+              GitHub
+            </a>
           </div>
         </div>
         <section className="control-plane" aria-label="Control Plane">
@@ -95,7 +148,7 @@ export default function Home() {
             </div>
             <span className="status-pill">Healthy</span>
           </div>
-          <div className="control-plane-grid" aria-label="Platform signals">
+          <div className="control-plane-grid" aria-label="System signals">
             <article className="signal-card">
               <span>CDC stream</span>
               <strong>12M+ events/day</strong>
@@ -124,7 +177,7 @@ export default function Home() {
       </section>
 
       <section className="section-block pillar-section">
-        <div className="section-kicker">Platform pillars</div>
+        <div className="section-kicker">Core systems</div>
         <h2>Modernization work that removes enterprise drag.</h2>
         <div className="content-grid">
           {pillars.map((pillar) => (
@@ -132,14 +185,14 @@ export default function Home() {
               <h3>{pillar.title}</h3>
               <p>{pillar.summary}</p>
               <div className="tag-list">
-                {pillar.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                {pillar.tags.map((tag) => <TechTag tag={tag} key={tag} />)}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="metric-grid platform-metrics" aria-label="Platform engineering proof points">
+      <section className="metric-grid platform-metrics" aria-label="Engineering proof points">
         {metrics.map((metric) => (
           <article className="metric-card" key={metric.label}>
             <strong>{metric.value}</strong>
@@ -149,23 +202,31 @@ export default function Home() {
       </section>
 
       <section className="section-block home-work">
-        <div className="section-kicker">Featured platform work</div>
-        <h2>Case studies with measurable platform outcomes.</h2>
-        {!projectsLoaded && <p className="state-message">Loading featured platform work...</p>}
+        <div className="section-kicker">Featured case studies</div>
+        <h2>Proof in production.</h2>
+        {!projectsLoaded && <p className="state-message">Loading featured work...</p>}
         {projectsLoaded && featuredProjects.length === 0 && (
-          <p className="state-message">Featured platform work is temporarily unavailable.</p>
+          <p className="state-message">Featured work is temporarily unavailable.</p>
         )}
         {featuredProjects.length > 0 && (
           <div className="project-grid compact">
             {featuredProjects.map((project) => (
               <article className="project-card compact-card platform-case-card" key={project.name}>
-                <div className="project-category">{project.category}</div>
                 <h3>{project.name}</h3>
-                <p><strong>Problem:</strong> {project.problem}</p>
-                <p><strong>Platform move:</strong> {project.platform_move}</p>
-                <p><strong>Outcome:</strong> {project.outcome}</p>
+                <div className="home-case-row">
+                  <strong>Problem</strong>
+                  <p>{project.problem}</p>
+                </div>
+                <div className="home-case-row">
+                  <strong>Action</strong>
+                  <p>{project.platform_move}</p>
+                </div>
+                <div className="home-case-row">
+                  <strong>Outcome</strong>
+                  <p>{project.outcome}</p>
+                </div>
                 <div className="tag-list">
-                  {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
+                  {parseProjectTags(project.tech_tags).map((tag) => <TechTag tag={tag} key={tag} />)}
                 </div>
               </article>
             ))}
@@ -175,15 +236,21 @@ export default function Home() {
 
       <section className="section-block timeline-section">
         <div className="section-kicker">Career arc</div>
-        <h2>Platform work before and beyond the title.</h2>
-        <div className="timeline-list">
+        <h2>Systems work before and beyond the title.</h2>
+        <ol className="timeline-list" aria-label="Career progression">
           {timeline.map((item) => (
-            <article className="timeline-item" key={item.company}>
-              <h3>{item.company}</h3>
+            <li className="timeline-item" key={item.company}>
+              <span className="timeline-year">{item.years}</span>
+              <h3 className="timeline-company">
+                <span className={`timeline-logo timeline-logo-${item.logo.tone}`}>
+                  <img src={item.logo.src} alt="" aria-hidden="true" />
+                </span>
+                <span>{item.company}</span>
+              </h3>
               <p>{item.focus}</p>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
     </main>
   );

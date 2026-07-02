@@ -3,16 +3,17 @@ import { Envelope, Github, Linkedin } from "react-bootstrap-icons";
 
 const contactMethods = [
   {
+    label: "LinkedIn",
+    value: "linkedin.com/in/hariraj-venkatesan",
+    href: "https://linkedin.com/in/hariraj-venkatesan",
+    icon: Linkedin,
+    badge: "Fastest response"
+  },
+  {
     label: "Email",
     value: "harirajv@gmail.com",
     href: "mailto:harirajv@gmail.com",
     icon: Envelope
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/hariraj-venkatesan",
-    href: "https://linkedin.com/in/hariraj-venkatesan",
-    icon: Linkedin
   },
   {
     label: "GitHub",
@@ -32,7 +33,7 @@ export default function Contact() {
           Reach out about engineering roles, technical collaboration, or systems work.
         </p>
 
-        <div className="direct-contact-grid">
+        <div className="direct-contact-grid contact-card-grid-spaced">
           {contactMethods.map((method) => {
             const Icon = method.icon;
             return (
@@ -44,7 +45,8 @@ export default function Contact() {
                 key={method.label}
               >
                 <i aria-hidden="true"><Icon /></i>
-                <span>{method.label}</span>
+                <span className="contact-card-label">{method.label}</span>
+                {method.badge && <span className="preferred-badge">{method.badge}</span>}
                 <strong>{method.value}</strong>
               </a>
             );

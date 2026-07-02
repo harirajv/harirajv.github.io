@@ -1,21 +1,39 @@
 import React from "react";
+import { PlusCircleDotted } from "react-bootstrap-icons";
 import { loadPortfolioSections, parseProjectTags, projectImagePath } from "../projectData";
+
+function projectLinks(project) {
+  const links = [];
+
+  if (project.details_link) {
+    links.push({
+      label: "GitHub",
+      url: project.details_link
+    });
+  }
+
+  return links.concat(project.paper_links || []).filter((link) => link.url);
+}
 
 function PlatformProjectCard({ project }) {
   return (
-    <article className="project-card platform-project-card">
-      <div className="project-category">{project.category}</div>
-      <h2>{project.name}</h2>
+    <article
+      className="project-card platform-project-card designed-case-study-card"
+      aria-label={`${project.name} case study`}
+    >
+      <header className="case-study-header">
+        <h2>{project.name}</h2>
+      </header>
       <dl className="case-study-list">
-        <div>
+        <div className="case-study-row case-study-problem">
           <dt>Problem</dt>
           <dd>{project.problem}</dd>
         </div>
-        <div>
-          <dt>Platform move</dt>
+        <div className="case-study-row case-study-move">
+          <dt>Technical move</dt>
           <dd>{project.platform_move}</dd>
         </div>
-        <div>
+        <div className="case-study-row case-study-outcome">
           <dt>Outcome</dt>
           <dd>{project.outcome}</dd>
         </div>
@@ -28,28 +46,46 @@ function PlatformProjectCard({ project }) {
 }
 
 function EarlierProjectCard({ project }) {
+  const links = projectLinks(project);
+
   return (
     <article className="project-card">
       {project.image_src && <img src={projectImagePath(project.image_src)} alt="" className="project-image" />}
       <div className="project-body">
-        <div className="project-category">{project.category}</div>
         <h2>{project.name}</h2>
         <p>{project.details_txt}</p>
-        <div className="tag-list">
-          {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
+        <div className="project-meta-row">
+          <div className="tag-list">
+            {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
+          </div>
+          {links.length > 0 && (
+            <div className="project-link-row" aria-label={`${project.name} links`}>
+              {links.map((link) => (
+                <a
+                  className="project-link-pill"
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${link.label} for ${project.name}`}
+                  title={`Open ${link.label}`}
+                  key={`${link.label}-${link.url}`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-        {project.details_link && (
-          <a
-            className="text-link"
-            href={project.details_link}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`Open ${project.name}`}
-          >
-            View project
-          </a>
-        )}
       </div>
+    </article>
+  );
+}
+
+function ComingSoonCard({ title }) {
+  return (
+    <article className="coming-soon-tile">
+      <PlusCircleDotted aria-hidden="true" focusable="false" />
+      <h2>{title}</h2>
     </article>
   );
 }
@@ -91,9 +127,9 @@ export default function Portfolio() {
     <main className="page-shell">
       <section id="portfolio" className="section-block">
         <div className="section-kicker">Portfolio</div>
-        <h1>Selected engineering projects.</h1>
+        <h1>Systems with outcomes.</h1>
         <p className="section-lede">
-          A mix of enterprise systems case studies and earlier data/ML projects, grouped so the strongest engineering projects are easy to scan first.
+          Enterprise delivery, automation, and ML experiments, arranged so the strongest engineering stories are easy to scan first.
         </p>
 
         {loading && <p className="state-message">Loading portfolio...</p>}
@@ -101,22 +137,26 @@ export default function Portfolio() {
         {!loading && !error && (
           <>
             <section className="portfolio-section" aria-labelledby="enterprise-systems-heading">
-              <div className="section-kicker">Case studies</div>
-              <h2 id="enterprise-systems-heading">Enterprise Systems</h2>
+              <h2 id="enterprise-systems-heading">Modernization Systems</h2>
               <div className="project-grid platform-grid">
                 {platformProjects.map((project) => (
                   <PlatformProjectCard project={project} key={project.name} />
                 ))}
+                <ComingSoonCard
+                  title="More systems in progress"
+                />
               </div>
             </section>
 
             <section className="portfolio-section" aria-labelledby="earlier-projects-heading">
-              <div className="section-kicker">Supporting range</div>
-              <h2 id="earlier-projects-heading">Earlier Data/ML Projects</h2>
+              <h2 id="earlier-projects-heading">ML Lab</h2>
               <div className="project-grid">
                 {earlierProjects.map((project) => (
                   <EarlierProjectCard project={project} key={project.name} />
                 ))}
+                <ComingSoonCard
+                  title="More ML in progress"
+                />
               </div>
             </section>
           </>
