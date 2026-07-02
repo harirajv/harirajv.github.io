@@ -1,34 +1,50 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import Portfolio from './Portfolio';
 
-const projects = [
-  {
-    name: 'CSP Cost Optimization',
-    category: 'Web',
-    image_src: 'Cloud-Cost.jpg',
-    details_txt: 'Optimizes cloud provider expenses.',
-    details_link: 'https://github.com/harirajv/CSP-profit-maximisation',
-    tech_tags: 'Python,Cloud'
-  }
-];
+const portfolioData = {
+  platformProjects: [
+    {
+      name: 'Real-Time CDC Platform',
+      category: 'Platform Work',
+      problem: 'Legacy synchronization created stale operational data and reconciliation work.',
+      platform_move: 'Built an event-driven CDC platform for enterprise order and ERP workflows.',
+      outcome: 'Processed 12M+ daily change events while reducing manual reconciliation overhead.',
+      tech_tags: 'Kafka,CDC,Debezium,PostgreSQL,CloudWatch'
+    }
+  ],
+  earlierProjects: [
+    {
+      name: 'Indian Language Identifier',
+      category: 'Earlier Data/ML Work',
+      image_src: 'language.png',
+      details_txt: 'Identified Indian languages from speech features extracted from news clips.',
+      details_link: 'https://github.com/harirajv/Automatic-Language-Identification',
+      tech_tags: 'NLP,Scikit-Learn'
+    }
+  ]
+};
 
 describe('Portfolio', () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  it('renders project cards from JSON', async () => {
+  it('renders platform and earlier work sections from JSON', async () => {
     vi.spyOn(global, 'fetch').mockResolvedValueOnce({
       ok: true,
-      json: () => Promise.resolve({ projects })
+      json: () => Promise.resolve(portfolioData)
     });
 
     render(<Portfolio />);
 
-    expect(screen.getByText(/loading projects/i)).toBeInTheDocument();
-    expect(await screen.findByRole('heading', { name: /csp cost optimization/i })).toBeInTheDocument();
-    expect(screen.getByText('Python')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /open csp cost optimization/i })).toHaveAttribute('href', projects[0].details_link);
+    expect(screen.getByText(/loading portfolio/i)).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /platform work/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /earlier data\/ml work/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /real-time cdc platform/i })).toBeInTheDocument();
+    expect(screen.getByText(/12m\+ daily change events/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /indian language identifier/i })).toBeInTheDocument();
+    expect(screen.getByText('Kafka')).toBeInTheDocument();
+    expect(screen.getByText('Scikit-Learn')).toBeInTheDocument();
   });
 
   it('renders a fallback when project loading fails', async () => {
@@ -37,7 +53,7 @@ describe('Portfolio', () => {
     render(<Portfolio />);
 
     await waitFor(() => {
-      expect(screen.getByText(/projects are temporarily unavailable/i)).toBeInTheDocument();
+      expect(screen.getByText(/portfolio is temporarily unavailable/i)).toBeInTheDocument();
     });
   });
 });
