@@ -31,6 +31,16 @@ describe('Layout', () => {
     expect(contactLink).toHaveAttribute('href', '/contact');
   });
 
+  it('marks the home nav icon for warm accent styling', () => {
+    render(
+      <MemoryRouter>
+        <Layout><div>stub</div></Layout>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole('link', { name: /^home$/i }).querySelector('svg')).toHaveClass('home-nav-icon');
+  });
+
   it('passes children through', () => {
     render(
       <MemoryRouter>

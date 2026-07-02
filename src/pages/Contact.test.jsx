@@ -18,11 +18,16 @@ describe('Contact', () => {
 
     expect(screen.getByRole('link', { name: /email/i })).toHaveAttribute('href', 'mailto:harirajv@gmail.com');
     expect(screen.getByRole('link', { name: /github/i })).toHaveAttribute('href', 'https://github.com/harirajv');
+    expect(contactCards[0].querySelector('img.contact-card-icon')).toHaveAttribute('src', '/assets/logos/linkedin-favicon.ico');
+    expect(screen.getByRole('link', { name: /email/i }).querySelector('img.contact-card-icon')).toHaveAttribute('src', '/assets/logos/gmail-favicon.ico');
+    expect(screen.getByRole('link', { name: /github/i }).querySelector('img.contact-card-icon')).toHaveAttribute('src', '/assets/logos/github-favicon.svg');
     expect(screen.queryByText(/best way to reach me/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/useful for async details/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/quick path to code/i)).not.toBeInTheDocument();
     contactCards.forEach((card) => {
       expect(card.querySelector('p')).not.toBeInTheDocument();
+      expect(card.querySelector('img')).toHaveAttribute('alt', '');
+      expect(card.querySelector('img')).toHaveAttribute('aria-hidden', 'true');
     });
     expect(screen.queryByText(/hvenka17@asu.edu/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/\+1/i)).not.toBeInTheDocument();

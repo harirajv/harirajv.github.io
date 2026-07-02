@@ -151,8 +151,9 @@ h3 {
   outline: none;
 }
 
-.nav-home-link .nav-icon {
+.nav-home-link .home-nav-icon {
   color: var(--accent-warm);
+  fill: currentColor;
 }
 
 .page-shell {
@@ -1165,10 +1166,12 @@ textarea.form-control {
   text-align: center;
 }
 
-.coming-soon-tile svg {
-  width: 2rem;
-  height: 2rem;
-  color: var(--accent);
+.coming-soon-icon {
+  width: 2.15rem;
+  height: 2.15rem;
+  color: var(--accent-warm);
+  fill: currentColor;
+  filter: drop-shadow(0 0 14px rgba(243, 184, 79, 0.24));
 }
 
 .coming-soon-tile h2 {
@@ -1399,9 +1402,11 @@ textarea.form-control {
   outline: none;
 }
 
-.direct-contact-card i {
-  color: var(--accent);
-  font-size: 1.6rem;
+.contact-card-icon {
+  display: block;
+  width: 1.65rem;
+  height: 1.65rem;
+  object-fit: contain;
 }
 
 .contact-card-label {

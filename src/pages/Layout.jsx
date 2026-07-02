@@ -30,7 +30,7 @@ export default function Layout({ children }) {
                 isActive ? "active" : null
               ].filter(Boolean).join(" ")}
             >
-              {item.icon && <item.icon className="nav-icon" aria-hidden="true" focusable="false" />}
+              {item.icon && <item.icon className="nav-icon home-nav-icon" aria-hidden="true" focusable="false" />}
               {item.label}
             </NavLink>
           ))}
