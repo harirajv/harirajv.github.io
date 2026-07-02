@@ -1406,8 +1406,7 @@ textarea.form-control {
   display: block;
   width: 1.65rem;
   height: 1.65rem;
-  color: var(--accent);
-  fill: currentColor;
+  object-fit: contain;
 }
 
 .contact-card-label {
