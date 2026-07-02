@@ -45,7 +45,7 @@ describe('Home', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders the technical showcase hero', async () => {
+  it('renders the platform engineering brand homepage', async () => {
     vi.spyOn(global, 'fetch').mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(portfolioData)
@@ -57,10 +57,13 @@ describe('Home', () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByRole('heading', { name: /software engineer for systems that ship/i })).toBeInTheDocument();
-    expect(screen.getByText(/aws infrastructure/i)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /view projects/i })).toHaveAttribute('href', '/portfolio');
-    expect(screen.getByRole('link', { name: /download resume/i })).toHaveAttribute('href', '/assets/resume.pdf');
+    expect(screen.getByRole('heading', { name: /i build the platforms that make enterprise engineering move faster/i })).toBeInTheDocument();
+    expect(screen.getByText(/real-time data platforms, zero-trust cloud infrastructure, and ai enablement/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /view platform work/i })).toHaveAttribute('href', '/portfolio');
+    expect(screen.getByRole('link', { name: /email me/i })).toHaveAttribute('href', 'mailto:harirajv@gmail.com');
+    expect(screen.getByText(/12m\+/i)).toBeInTheDocument();
+    expect(screen.getByText(/4-6 min/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /real-time data platforms/i })).toBeInTheDocument();
     expect(await screen.findByRole('heading', { name: /real-time cdc platform/i })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: /ci\/cd platform & developer tooling/i })).not.toBeInTheDocument();
   });

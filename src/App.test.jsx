@@ -24,7 +24,7 @@ describe('App routing', () => {
         <AppRoutes/>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: /software engineer for systems that ship/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /i build the platforms that make enterprise engineering move faster/i })).toBeInTheDocument();
     expect(screen.getByRole('banner')).toBeInTheDocument();
   });
 
