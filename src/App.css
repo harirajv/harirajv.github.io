@@ -794,3 +794,43 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
+.portfolio-section {
+  margin-top: clamp(36px, 6vw, 64px);
+}
+
+.platform-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.platform-project-card {
+  padding: 24px;
+}
+
+.case-study-list {
+  display: grid;
+  gap: 16px;
+  margin: 18px 0 22px;
+}
+
+.case-study-list div {
+  display: grid;
+  gap: 5px;
+}
+
+.case-study-list dt {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.case-study-list dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+}

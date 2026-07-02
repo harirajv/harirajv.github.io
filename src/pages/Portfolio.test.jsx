@@ -38,8 +38,8 @@ describe('Portfolio', () => {
     render(<Portfolio />);
 
     expect(screen.getByText(/loading portfolio/i)).toBeInTheDocument();
-    expect(await screen.findByRole('heading', { name: /platform work/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /earlier data\/ml work/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /^platform work$/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /^earlier data\/ml work$/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /real-time cdc platform/i })).toBeInTheDocument();
     expect(screen.getByText(/12m\+ daily change events/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /indian language identifier/i })).toBeInTheDocument();

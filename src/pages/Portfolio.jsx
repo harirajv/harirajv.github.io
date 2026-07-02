@@ -1,18 +1,73 @@
 import React from "react";
-import { loadProjects, parseProjectTags, projectImagePath } from "../projectData";
+import { loadPortfolioSections, parseProjectTags, projectImagePath } from "../projectData";
+
+function PlatformProjectCard({ project }) {
+  return (
+    <article className="project-card platform-project-card">
+      <div className="project-category">{project.category}</div>
+      <h2>{project.name}</h2>
+      <dl className="case-study-list">
+        <div>
+          <dt>Problem</dt>
+          <dd>{project.problem}</dd>
+        </div>
+        <div>
+          <dt>Platform move</dt>
+          <dd>{project.platform_move}</dd>
+        </div>
+        <div>
+          <dt>Outcome</dt>
+          <dd>{project.outcome}</dd>
+        </div>
+      </dl>
+      <div className="tag-list">
+        {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
+      </div>
+    </article>
+  );
+}
+
+function EarlierProjectCard({ project }) {
+  return (
+    <article className="project-card">
+      {project.image_src && <img src={projectImagePath(project.image_src)} alt="" className="project-image" />}
+      <div className="project-body">
+        <div className="project-category">{project.category}</div>
+        <h2>{project.name}</h2>
+        <p>{project.details_txt}</p>
+        <div className="tag-list">
+          {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
+        {project.details_link && (
+          <a
+            className="text-link"
+            href={project.details_link}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${project.name}`}
+          >
+            View project
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
 
 export default function Portfolio() {
-  const [projects, setProjects] = React.useState([]);
+  const [platformProjects, setPlatformProjects] = React.useState([]);
+  const [earlierProjects, setEarlierProjects] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
 
   React.useEffect(() => {
     let mounted = true;
 
-    loadProjects()
-      .then((loadedProjects) => {
+    loadPortfolioSections()
+      .then((sections) => {
         if (mounted) {
-          setProjects(loadedProjects);
+          setPlatformProjects(sections.platformProjects);
+          setEarlierProjects(sections.earlierProjects);
           setError(false);
         }
       })
@@ -35,41 +90,36 @@ export default function Portfolio() {
   return (
     <main className="page-shell">
       <section id="portfolio" className="section-block">
-        <div className="section-kicker">Selected work</div>
-        <h1>Portfolio</h1>
+        <div className="section-kicker">Portfolio</div>
+        <h1>Platform work for enterprise modernization.</h1>
         <p className="section-lede">
-          Projects across cloud optimization, computer vision, language systems, healthcare data, fraud detection, and React applications.
+          Case studies across real-time data, secure cloud foundations, AI-enabled engineering systems, delivery tooling, and earlier data/ML work.
         </p>
 
-        {loading && <p className="state-message">Loading projects...</p>}
-        {!loading && error && <p className="state-message">Projects are temporarily unavailable. Please check back shortly.</p>}
+        {loading && <p className="state-message">Loading portfolio...</p>}
+        {!loading && error && <p className="state-message">Portfolio is temporarily unavailable. Please check back shortly.</p>}
         {!loading && !error && (
-          <div className="project-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.name}>
-                <img src={projectImagePath(project.image_src)} alt="" className="project-image" />
-                <div className="project-body">
-                  <div className="project-category">{project.category}</div>
-                  <h2>{project.name}</h2>
-                  <p>{project.details_txt}</p>
-                  <div className="tag-list">
-                    {parseProjectTags(project.tech_tags).map((tag) => <span key={tag}>{tag}</span>)}
-                  </div>
-                  {project.details_link && (
-                    <a
-                      className="text-link"
-                      href={project.details_link}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Open ${project.name}`}
-                    >
-                      View project
-                    </a>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
+          <>
+            <section className="portfolio-section" aria-labelledby="platform-work-heading">
+              <div className="section-kicker">Primary work</div>
+              <h2 id="platform-work-heading">Platform Work</h2>
+              <div className="project-grid platform-grid">
+                {platformProjects.map((project) => (
+                  <PlatformProjectCard project={project} key={project.name} />
+                ))}
+              </div>
+            </section>
+
+            <section className="portfolio-section" aria-labelledby="earlier-work-heading">
+              <div className="section-kicker">Supporting range</div>
+              <h2 id="earlier-work-heading">Earlier Data/ML Work</h2>
+              <div className="project-grid">
+                {earlierProjects.map((project) => (
+                  <EarlierProjectCard project={project} key={project.name} />
+                ))}
+              </div>
+            </section>
+          </>
         )}
       </section>
     </main>
