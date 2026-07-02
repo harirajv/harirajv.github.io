@@ -27,6 +27,7 @@ describe('App routing', () => {
     expect(screen.getByRole('heading', { name: /i build the platforms that make enterprise engineering move faster/i })).toBeInTheDocument();
     expect(screen.getByRole('banner')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /^home$/i })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: /^home$/i })).toHaveClass('nav-home-link');
   });
 
   it('renders About at /about', () => {
