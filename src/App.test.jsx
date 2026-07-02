@@ -26,6 +26,7 @@ describe('App routing', () => {
     );
     expect(screen.getByRole('heading', { name: /i build the platforms that make enterprise engineering move faster/i })).toBeInTheDocument();
     expect(screen.getByRole('banner')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^home$/i })).toHaveAttribute('href', '/');
   });
 
   it('renders About at /about', () => {
@@ -53,6 +54,8 @@ describe('App routing', () => {
       </MemoryRouter>
     );
     expect(await screen.findByRole('heading', { name: /selected engineering projects/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^home$/i })).not.toHaveClass('active');
+    expect(screen.getByRole('link', { name: /^portfolio$/i })).toHaveClass('active');
   });
 
   it('renders Contact at /contact', () => {
