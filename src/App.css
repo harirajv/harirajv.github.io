@@ -880,3 +880,50 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
+.direct-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.direct-contact-card {
+  display: grid;
+  gap: 10px;
+  min-height: 170px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 24px;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.direct-contact-card:hover,
+.direct-contact-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: var(--panel-raised);
+  outline: none;
+}
+
+.direct-contact-card i {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.direct-contact-card span {
+  color: var(--muted);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.direct-contact-card strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 860px) {
+  .direct-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
