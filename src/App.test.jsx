@@ -2,10 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { AppRoutes } from './App';
 
-vi.mock('typed.js', () => ({
-  default: class { constructor() {} destroy() {} }
-}));
-
 describe('App routing', () => {
   beforeEach(() => {
     vi.spyOn(global, 'fetch').mockResolvedValue({

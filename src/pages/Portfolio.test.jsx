@@ -89,6 +89,8 @@ describe('Portfolio', () => {
     expect(screen.getByRole('heading', { name: /more ml in progress/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /more systems in progress/i }).closest('article')).toHaveClass('coming-soon-tile');
     expect(screen.getByRole('heading', { name: /more ml in progress/i }).closest('article')).toHaveClass('coming-soon-tile');
+    expect(screen.getByRole('heading', { name: /more systems in progress/i }).closest('article').querySelector('svg')).toHaveClass('coming-soon-icon');
+    expect(screen.getByRole('heading', { name: /more ml in progress/i }).closest('article').querySelector('svg')).toHaveClass('coming-soon-icon');
     expect(screen.getByRole('heading', { name: /more systems in progress/i }).closest('article')).not.toHaveClass('project-card');
     expect(screen.queryByText(/enterprise systems/i)).not.toBeInTheDocument();
     const ckdCard = screen.getByRole('heading', { name: /chronic kidney disease detection/i }).closest('article');

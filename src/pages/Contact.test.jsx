@@ -23,6 +23,7 @@ describe('Contact', () => {
     expect(screen.queryByText(/quick path to code/i)).not.toBeInTheDocument();
     contactCards.forEach((card) => {
       expect(card.querySelector('p')).not.toBeInTheDocument();
+      expect(card.querySelector('svg')).toHaveClass('contact-card-icon');
     });
     expect(screen.queryByText(/hvenka17@asu.edu/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/\+1/i)).not.toBeInTheDocument();

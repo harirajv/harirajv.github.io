@@ -84,7 +84,7 @@ function EarlierProjectCard({ project }) {
 function ComingSoonCard({ title }) {
   return (
     <article className="coming-soon-tile">
-      <PlusCircleDotted aria-hidden="true" focusable="false" />
+      <PlusCircleDotted className="coming-soon-icon" aria-hidden="true" focusable="false" />
       <h2>{title}</h2>
     </article>
   );

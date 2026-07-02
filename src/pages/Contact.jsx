@@ -44,7 +44,7 @@ export default function Contact() {
                 rel={method.href.startsWith("http") ? "noreferrer" : undefined}
                 key={method.label}
               >
-                <i aria-hidden="true"><Icon /></i>
+                <Icon className="contact-card-icon" aria-hidden="true" focusable="false" />
                 <span className="contact-card-label">{method.label}</span>
                 {method.badge && <span className="preferred-badge">{method.badge}</span>}
                 <strong>{method.value}</strong>
