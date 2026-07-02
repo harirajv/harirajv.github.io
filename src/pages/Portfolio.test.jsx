@@ -15,7 +15,7 @@ const portfolioData = {
   earlierProjects: [
     {
       name: 'Indian Language Identifier',
-      category: 'Earlier Data/ML Work',
+      category: 'Earlier Data/ML Projects',
       image_src: 'language.png',
       details_txt: 'Identified Indian languages from speech features extracted from news clips.',
       details_link: 'https://github.com/harirajv/Automatic-Language-Identification',
@@ -29,7 +29,7 @@ describe('Portfolio', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders platform and earlier work sections from JSON', async () => {
+  it('renders enterprise systems and earlier project sections from JSON', async () => {
     vi.spyOn(global, 'fetch').mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(portfolioData)
@@ -39,8 +39,8 @@ describe('Portfolio', () => {
 
     expect(screen.getByText(/loading portfolio/i)).toBeInTheDocument();
     expect(await screen.findByRole('heading', { name: /^enterprise systems$/i })).toBeInTheDocument();
-    expect(await screen.findByRole('heading', { name: /^earlier data\/ml work$/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /selected engineering work/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /^earlier data\/ml projects$/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /selected engineering projects/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /real-time cdc platform/i })).toBeInTheDocument();
     expect(screen.getByText(/12m\+ daily change events/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /indian language identifier/i })).toBeInTheDocument();

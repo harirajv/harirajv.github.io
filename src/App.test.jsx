@@ -52,7 +52,7 @@ describe('App routing', () => {
         <AppRoutes/>
       </MemoryRouter>
     );
-    expect(await screen.findByRole('heading', { name: /selected engineering work/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /selected engineering projects/i })).toBeInTheDocument();
   });
 
   it('renders Contact at /contact', () => {

@@ -91,9 +91,9 @@ export default function Portfolio() {
     <main className="page-shell">
       <section id="portfolio" className="section-block">
         <div className="section-kicker">Portfolio</div>
-        <h1>Selected engineering work.</h1>
+        <h1>Selected engineering projects.</h1>
         <p className="section-lede">
-          A mix of enterprise systems work and earlier data/ML projects, grouped so the strongest engineering work is easy to scan first.
+          A mix of enterprise systems case studies and earlier data/ML projects, grouped so the strongest engineering projects are easy to scan first.
         </p>
 
         {loading && <p className="state-message">Loading portfolio...</p>}
@@ -101,7 +101,7 @@ export default function Portfolio() {
         {!loading && !error && (
           <>
             <section className="portfolio-section" aria-labelledby="enterprise-systems-heading">
-              <div className="section-kicker">Primary work</div>
+              <div className="section-kicker">Case studies</div>
               <h2 id="enterprise-systems-heading">Enterprise Systems</h2>
               <div className="project-grid platform-grid">
                 {platformProjects.map((project) => (
@@ -110,9 +110,9 @@ export default function Portfolio() {
               </div>
             </section>
 
-            <section className="portfolio-section" aria-labelledby="earlier-work-heading">
+            <section className="portfolio-section" aria-labelledby="earlier-projects-heading">
               <div className="section-kicker">Supporting range</div>
-              <h2 id="earlier-work-heading">Earlier Data/ML Work</h2>
+              <h2 id="earlier-projects-heading">Earlier Data/ML Projects</h2>
               <div className="project-grid">
                 {earlierProjects.map((project) => (
                   <EarlierProjectCard project={project} key={project.name} />

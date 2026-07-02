@@ -44,7 +44,7 @@
   "earlierProjects": [
     {
       "name": "CSP Cost Optimization",
-      "category": "Earlier Data/ML Work",
+      "category": "Earlier Data/ML Projects",
       "image_src": "Cloud-Cost.jpg",
       "details_txt": "Decision-support model using Analytic Hierarchy Process techniques to reason about cloud service provider cost optimization and profitability tradeoffs.",
       "details_link": "https://github.com/harirajv/CSP-profit-maximisation",
@@ -52,7 +52,7 @@
     },
     {
       "name": "Anchor-Free Pedestrian Detection",
-      "category": "Earlier Data/ML Work",
+      "category": "Earlier Data/ML Projects",
       "image_src": "pedestrian.webp",
       "details_txt": "Computer vision project using residual networks, anchor-free detection, and feature pyramid networks to improve pedestrian detection in challenging scenes.",
       "details_link": "",
@@ -60,7 +60,7 @@
     },
     {
       "name": "Indian Language Identifier",
-      "category": "Earlier Data/ML Work",
+      "category": "Earlier Data/ML Projects",
       "image_src": "language.png",
       "details_txt": "Speech classification project that identified Indian languages from audio features extracted from news clips.",
       "details_link": "https://github.com/harirajv/Automatic-Language-Identification",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Credit Card Fraud Detection",
-      "category": "Earlier Data/ML Work",
+      "category": "Earlier Data/ML Projects",
       "image_src": "credit.jpg",
       "details_txt": "Data science project for identifying anomalous transaction behavior in anonymized, imbalanced financial data.",
       "details_link": "",
@@ -76,7 +76,7 @@
     },
     {
       "name": "Chronic Kidney Disease Detection",
-      "category": "Earlier Data/ML Work",
+      "category": "Earlier Data/ML Projects",
       "image_src": "medical.png",
       "details_txt": "Healthcare ML project exploring early chronic kidney disease detection from clinical indicators such as sugar, albumin, and hemoglobin levels.",
       "details_link": "",
